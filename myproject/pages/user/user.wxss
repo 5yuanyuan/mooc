@@ -1,0 +1,45 @@
+.home{
+  justify-content: center;
+  align-items: center;
+}
+.headImage{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin: 20rpx;
+}
+/* normol*/
+.card{
+  background: linear-gradient(310deg, #FA452D 0%, #FFB42A 100%, #FFB42A 100%);
+}
+/* agent */
+.card2{
+  background: rosybrown;
+}
+/* shareholder */
+.card3{
+  background: rgb(239, 241, 114);
+}
+/*leader*/
+.card4{
+  background: rgb(151, 223, 252);
+}
+#card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 800rpx;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}

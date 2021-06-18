@@ -1,0 +1,42 @@
+<view class="page">
+  <mp-dialog title="登录" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>请确认登录</view>
+  </mp-dialog>
+
+  <view  class="page__bd">
+    <view  wx:if="{{member_type}}" class="member_type==='normal'?card:(member_type==='agent'?card2:card3)" >
+      <image  class="headImage"  src="{{avatarUrl}}" mode="heightFix"></image>
+      <view id='card'>
+        <text>{{nickname}}</text>
+        <view bindtap="registerUser">完善会员信息></view>
+        <text wx:if="{{nickname}}">会员号：{{seq_number}}</text>
+        <text wx:if="{{member_type}}!='normol'">当前余额：{{remain_total_money}}</text>
+        <view wx:if="{{member_type}}!='normol'">
+          <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="goto_withdrew">提现</button>
+            <!-- <button class="weui-btn" type="primary" bindtap="goto_outcome">查看提现列表</button> -->
+            <button class="weui-btn" type="primary" bindtap="goto_friends">查看我的会员伙伴</button>
+            <button class="weui-btn" type="primary" bindtap="goto_income">显示消费提成</button>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+    <!-- <view class="userinfo">
+    <view class="userinfo-avatar" bindtap="bindViewTap">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data type="userNickName"></open-data>
+  </view> -->
+  <!-- <text wx:if="wx.getStorageSync('record_id')">会员号1：{{wx.getStorageSync('record_id')}}</text>
+    <text wx:else>会员号2：{{record_id}}</text> -->
+  <!-- <view wx:if="{{canUseGetUserProfile}}" bindtap="getUserProfile">点击登录</view>
+    <view wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登录</view> -->
+  <!-- <mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">
+    <view>test content</view>
+</mp-dialog> -->
+</view>
+
+
+

@@ -1,0 +1,54 @@
+<view>
+  <swiper autoplay="true" interval="2000" duration="500" indicator-dots="true">
+    <swiper-item>
+      <image src="https://tse4-mm.cn.bing.net/th/id/OIP.QTCGt0vWtB9F6KM3v-_JRQHaE8?w=302&h=202&c=7&o=5&dpr=1.12&pid=1.7">
+      </image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://tse1-mm.cn.bing.net/th/id/OIP.9jibqcgm7kJE68oO9iUSTQHaE8?w=265&h=180&c=7&o=5&dpr=1.12&pid=1.7">
+      </image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://th.bing.com/th/id/Re1da018be70cbe8683c6f6b0768261ff?rik=FFI2iIcJABO2%2fg&riu=http%3a%2f%2fdasouji.com%2fwp-content%2fuploads%2f2019%2f02%2f%e6%98%a5%e6%9a%96%e8%8a%b1%e5%bc%80-5.jpg&ehk=3tdkHA%2fGKJ4uD1TZMVOwf3%2fpmm1xoMkexUyb9ZlnGwo%3d&risl=&pid=ImgRaw">
+      </image>
+    </swiper-item>
+  </swiper>
+  <view class="feature_view">
+  <view class="row">
+    <view class="oneitem">
+      <image class="flowerImage"  mode = "aspectFill" bindtap="clickProduct" src="https://images.unsplash.com/photo-1494516192674-b82b5f1e61dc?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8NnNNVmpUTFNrZVF8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+      </image>
+      <view><text>开业酬宾-全场五折</text></view>
+    </view>
+    <view class="oneitem">
+      <image class="flowerImage" mode = "aspectFill" src="https://images.unsplash.com/photo-1622650926520-8d8fb307b8aa?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE3fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+      </image>
+      <view><text>开业酬宾-全场五折2</text></view>
+    </view>
+    
+  </view>
+  <view class="row">
+    <view class="oneitem">
+      <image class="flowerImage"  mode = "aspectFill" src="https://th.bing.com/th/id/R57a828bac6532cd56d83a02826bcac8a?rik=Ep3cPUs8D7tLJQ&riu=http%3a%2f%2fbbs.mychat.to%2fattach%2fFid_234%2f234_528201.jpg&ehk=XeorzXiIuOmfkORctRTjKhQVgmOoRiNRW9e9jcsHR6s%3d&risl=&pid=ImgRaw">
+      </image>
+      <view><text>开业酬宾-全场五折3</text></view>
+    </view>
+    <view class="oneitem">
+      <image class="flowerImage" mode = "aspectFill" src="https://www.facaishur.com/uploads/allimg/190830/15-1ZS01K21B33.jpg"></image>
+      <view><text>开业酬宾-全场五折4</text></view>
+    </view>
+  </view>
+  <view class="row">
+    <view class="oneitem">
+      <image class="flowerImage" mode = "aspectFill" src="https://img.zcool.cn/community/0136395b76744fa801218d3212ec46.jpg@1280w_1l_2o_100sh.jpg">
+      </image>
+      <view><text>开业酬宾-全场五折5</text></view>
+    </view>
+    <view class="oneitem">
+      <image class="flowerImage" mode = "aspectFill" src="https://tse2-mm.cn.bing.net/th/id/OIP.ikfP4omvueJmuy8p65v4RwHaE8?pid=ImgDet&rs=1">
+      </image>
+      <view><text>开业酬宾-全场五折6</text></view>
+    </view>
+  </view>
+</view>
+</view>
