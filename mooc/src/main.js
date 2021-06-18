@@ -9,6 +9,6 @@ import * as echarts from 'echarts'
 const app = createApp(App)
 app.use(router)
 app.use(VueAxios,axios);
-app.use(echarts)
+app.config.globalProperties.echarts = echarts;
 installElementPlus(app)
 app.mount('#app')

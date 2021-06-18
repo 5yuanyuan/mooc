@@ -1,43 +1,60 @@
 <template>
-    <div>hello</div>
-    <div class="card-body" style="width: 600px;height: 600px;" id="incomeReport">
-        <!--                            <canvas class="js-chartjs-bars"></canvas>-->
-    </div>
+    <div id="mycharts" ref="myRef" class="chart-box" />
 </template>
+<script lang="js">
+    import { defineComponent, getCurrentInstance, ref, onMounted } from 'vue';
+    export default defineComponent({
+        name: 'Report',
+        setup() {
+            const { ctx } = getCurrentInstance();
+            const myRef = ref(null);
 
-<script>
-    export default {
-        name: "Report",
-        methods:{
-            showIncomeReport:function () {
-                let incomeReportChart = this.echarts.init(document.getElementById('incomeReport'))
-
-                let option = {
+            const initT = () => {
+                const myChart = ctx.echarts.init(document.getElementById('mycharts'));
+                console.log(myChart);
+                myChart.setOption({
+                    title: {
+                        text: '本月数据统计'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['任务数量']
+                    },
                     xAxis: {
-                        type: 'category',
-                        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                        data: ['javascript', 'vue', 'ts', 'react', 'nginx']
                     },
-                    yAxis: {
-                        type: 'value'
-                    },
-                    series: [{
-                        data: [120, 200, 150, 80, 70, 110, 130],
-                        type: 'bar',
-                        showBackground: true,
-                        backgroundStyle: {
-                            color: 'rgba(180, 180, 180, 0.2)'
+                    yAxis: {},
+                    series: [
+                        {
+                            name: '任务数量',
+                            type: 'bar',
+                            data: [5, 20, 36, 10, 10]
                         }
-                    }]
-                };
-                incomeReportChart.setOption(option)
-            },
-        },
-        mounted() {
-            this.showIncomeReport()
+                    ]
+                });
+            };
+
+            onMounted(() => {
+                initT();
+            });
+            return {
+                myRef
+            };
         }
-    }
+    });
 </script>
 
-<style scoped>
+<style lang="css" scoped>
 
+
+    img{
+        width: 400px;
+        height: 400px;
+        background: red;
+    }
+    .chart-box{
+        width: 600px;
+        height: 600px;
+    }
 </style>
+
