@@ -1,0 +1,50 @@
+<view class="home">
+  <view>
+    <!-- wx:for="{bannerImages}" wx:src="{{bannerImages[0].cover_image}}"-->
+    <swiper  autoplay="true" interval="2000" duration="500" indicator-dots="true">
+      <swiper-item  wx:for="{{bannerImages}}" wx:key="banner_id" wx:for-index="i">
+        <image  src="{{item.coverImage}}">
+        </image>
+      </swiper-item>
+    </swiper>
+  </view>
+  
+  <view class="feature_title">
+    <text >优惠活动❀</text>
+  </view>
+  <view class="feature_view">
+    <view class="row">
+      <view class="oneitem" wx:for="{{productionList}}">
+        <image class="flowerImage"  mode = "aspectFill" bindtap="clickProduct" src="{{item.coverImage}}"></image>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="bottom">
+    <text>订花热线：666-6666</text>
+  </view>
+</view>
+<!-- <view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">user-mot{{motto}}</text>
+  </view>
+</view>
+ -->

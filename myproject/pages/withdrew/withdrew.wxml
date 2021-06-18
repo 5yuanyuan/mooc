@@ -1,0 +1,27 @@
+<view>
+  <mp-loading wx:if="{{show}}" type="circle"></mp-loading>
+  <text wx:if="{{remain_total_money}}">当前余额：{{remain_total_money}}\n</text>
+  <text wx:if="{{commission_total}}">已提现:{{commission_total}}\n</text>
+  <text wx:if="{{income_total_money}}">总收入:{{income_total_money}}\n</text>
+  <text wx:if="{{outcome_total_money}}">当前正在提现金额:{{outcome_total_money}}\n</text>
+  <text>提现详情：\n</text>
+  <text class="td">提现金额</text>
+  <text class="td">提现时间</text>
+  <text class="td">状态</text>
+  <view class="table" wx:for="{{outcome_list}}">
+      <text class="td">{{item.outcome_money}}</text>
+      <text class="td">{{item.outcome_time}}</text>
+      <text class="td">{{item.status}}</text>
+  </view>
+  <mp-form id="form" models="{{formData}}">
+    <mp-cells>
+      <mp-cell show-error prop="num" title="提现金额" ext-class="">
+          <input value="{{ formData.num }}" bindinput="formInputChange" data-field="num" class="weui-input" placeholder=" 请输入提现金额"/>
+      </mp-cell>
+    </mp-cells>
+  </mp-form>
+ 
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="submitForm">确定提现</button>
+  </view>
+</view>

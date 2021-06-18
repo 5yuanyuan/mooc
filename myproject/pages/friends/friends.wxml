@@ -1,0 +1,24 @@
+<view class="page">
+    <view class="page__bd">
+      <view class="table">
+        <text>一级用户：</text>
+        <view wx:if="{{first_list}}" class="tr" wx:for = "{{first_list}}" > 
+          <text class="td">{{item.fullname}}</text>
+          <image class = "headImage" wx:if="{{item.avatarUrl}}" src= "{{item.avatarUrl}}"></image>
+        </view>
+        <mp-loading wx:if="{{show}}" type="circle"></mp-loading>
+        <!-- <view wx:if="!{{first_list}}">
+          <text>无</text>
+        </view> -->
+        <text>二级用户：</text>
+        <view wx:if="{{second_list}}" class="tr" wx:for = "{{second_list}}" > 
+          <text class="td">{{item.fullname}}</text>
+          <image class = "headImage" wx:if="{{item.avatarUrl}}" src= "{{item.avatarUrl}}"></image>
+        </view>
+        <mp-loading wx:if="{{show}}" type="circle"></mp-loading>
+        <!-- <view wx:if="!{{second_list}}">
+          <text>无</text>
+        </view> -->
+      </view>
+    </view>
+</view>

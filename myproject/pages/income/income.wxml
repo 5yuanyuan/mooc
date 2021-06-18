@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="page__bd">
+      <view class="table" wx:for="{{month_list}}">
+        <text>{{item}}\n</text>
+        <text class="td">用户名：</text>
+        <text class="td">消费日期</text>
+        <text class="td">消费金额</text>
+        <view class="tr" wx:for="{{income_dict[item].sale_list}}">
+          <text class="td">{{item.customer.fullname}}</text>
+          <text class="td">{{item.sale_date}}</text>
+          <text class="td">{{item.sale_money}}</text>
+        </view>
+      </view>
+    </view>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/detail/detail.wxml-->
+<view class="home">
+  <image mode="widthFix"  src="https://pebble.oss-cn-hangzhou.aliyuncs.com/bdbff8ce-895c-43f7-8443-b321538c3940.png">
+  </image>
+</view>

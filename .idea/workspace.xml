@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f4f37a6e-8ec1-4f42-8a56-d8f80794a733" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/mooc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/app.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/apply/apply.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/apply/apply.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/apply/apply.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/apply/apply.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/detail/detail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/detail/detail.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/detail/detail.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/detail/detail.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/friends/friends.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/friends/friends.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/friends/friends.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/friends/friends.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/income/income.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/income/income.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/income/income.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/income/income.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/index/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/index/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/index/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/logs/logs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/logs/logs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/logs/logs.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/logs/logs.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/tips/tips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/tips/tips.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/tips/tips.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/tips/tips.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/user/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/user/user.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/user/user.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/user/user.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/withdrew/withdrew.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/withdrew/withdrew.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/withdrew/withdrew.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/pages/withdrew/withdrew.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/project.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/sitemap.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/static/icon/iov-shopping.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/static/icon/iov-shopping2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/static/icon/shangcheng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/static/icon/shangcheng2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/static/icon/tips.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/static/icon/tips2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/static/icon/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/static/icon/user2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/utils/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mooc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mooc/package-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tz0RmcUPg4VtB81cN9p7AHjeOs" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4f37a6e-8ec1-4f42-8a56-d8f80794a733" name="Default Changelist" comment="" />
+      <created>1623756604857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623756604857</updated>
+      <workItem from="1623756606027" duration="324000" />
+      <workItem from="1623757114193" duration="10000" />
+      <workItem from="1623925317341" duration="22000" />
+      <workItem from="1623929711288" duration="40000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
