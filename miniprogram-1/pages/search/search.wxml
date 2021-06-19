@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="topBar">
+    <view>在<text style="color: blue">"{{showKey}}"</text>中找到 {{showNum}} 门课程</view>
+  </view>
+
+  <view>
+    <view class="content">
+      <navigator class="findItem" url="/pages/course/course?courseId={{item.id}}" wx:for="{{courseList}}"
+        wx:key="index">
+        <image class="pic" src="{{item.cover}}"></image>
+        <view class="msg">
+          <view class="title">{{item.title}}</view>
+          <view class="price" wx:if="{{item.price != 0}}">￥{{item.price}}</view>
+          <view class="price" wx:else>免费</view>
+          <view class="info">{{item.buyCount}}人购买--{{item.viewCount}}人在学习</view>
+        </view>
+      </navigator>
+      <Line></Line>
+    </view>
+  </view>
+</view>
+<FooBar></FooBar>

@@ -1,0 +1,21 @@
+<form bindsubmit="formSubmit">
+  <mp-form>
+    <mp-cells>
+      <mp-cell title="手机号">
+        <input name="username" class="weui-input" placeholder="请输入手机号" bindinput="getPhoneNum" />
+      </mp-cell>
+      <mp-cell title="密码">
+        <input name="password" class="weui-input" placeholder="请设置密码" password="true" bindinput="getPassword" />
+      </mp-cell>
+      <mp-cell title="验证码">
+        <input name="code" class="weui-input" placeholder="请输入验证码" bindinput="getCode" />
+        <button slot="footer" size="mini" bindtap="getSmsCode" disabled="{{smsCodeDisabled}}"
+          type="primary">{{getSmsCodeBtnTxt}}</button>
+      </mp-cell>
+    </mp-cells>
+    <view class="btn-area">
+      <button disabled="{{registDisabled}}" type="primary" formType="submit"
+        loading="{{btnLoading}}"> {{registBtnTxt}} </button>
+    </view>
+  </mp-form>
+</form>

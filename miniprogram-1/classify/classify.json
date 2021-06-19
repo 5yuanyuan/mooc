@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "FooBar": "/component/FooBar/FooBar",
+    "Line": "/component/Line/Line"
+  }
+}

@@ -1,0 +1,4 @@
+<view class="fooBar">
+  <image class="pic" src="/images/miniketang.jpg"></image>
+  <view class="text">-- designed by xlc --</view>
+</view>

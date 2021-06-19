@@ -103,7 +103,7 @@ export default {
     goto: function (id) {
       var that = this
       that.$router.push({
-        name: "add_product",
+        name: "change_banner",
         query: {
           "id": id
         }
@@ -111,7 +111,7 @@ export default {
     },
 
     goAdd: function () {
-      this.$router.push("/add_product")
+      this.$router.push("/change_banner")
     },
 
     changeOrder: function (event) {

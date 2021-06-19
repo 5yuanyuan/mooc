@@ -1,0 +1,24 @@
+<mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+<view class="main">
+
+  <view class="subject" wx:for="{{subjectList}}" wx:key="index">
+    <view class="subItem">
+      <navigator url="/pages/search/search?subjectParentId={{item.id}}&searchName={{item.name}}">
+        <image class="pic" src="/images/search.png" />
+        <view class="text">{{item.name}}</view>
+      </navigator>
+    </view>
+
+
+    <view class="content">
+      <navigator url="/pages/search/search?subjectId={{item.id}}&searchName={{item.name}}" wx:for="{{item.children}}"
+        wx:key="index">
+        <text class="item_content" decode="{{true}}">{{item.name}}&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+      </navigator>
+    </view>
+  </view>
+
+</view>
+<Line></Line>
+
+<FooBar></FooBar>

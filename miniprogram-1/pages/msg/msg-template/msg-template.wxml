@@ -1,0 +1,10 @@
+<template name="msg">
+  <view class="gmtCreate">{{gmtCreate}}</view>
+  <image class="img" src="{{avatar}}" ></image>
+  <view class="text" bindtap="check" data-id="{{id}}">
+    <view class="sender">{{postName}}</view>
+    <view class="title">{{title}}</view>
+    <view class="source">{{source}}</view>
+    <view class="msg">{{content}}</view>
+  </view>
+</template>
