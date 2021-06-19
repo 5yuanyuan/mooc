@@ -1,0 +1,134 @@
+.main .video {
+    margin: 20rpx 10rpx;
+}
+
+.main .video .videoItem {
+    width: 100%;
+    height: 500rpx;
+}
+
+
+.main .courseDetail .title {
+    margin-top: 10rpx;
+    margin-left: 40rpx;
+    font-size: 40rpx;
+}
+
+.main .courseDetail .msg {
+    display: flex;
+    text-align: center;
+    margin-top: 10rpx;
+}
+
+.main .courseDetail .msg .price {
+    color: red;
+    margin-left: 34rpx;
+}
+
+.main .courseDetail .msg .info {
+    margin: 10rpx 60rpx;
+    font-size: 22rpx;
+}
+
+
+.main .teacherInfo {
+    margin: 20rpx 20rpx;
+}
+
+.main .teacherInfo .title {
+    font-size: 40rpx;
+}
+
+.main .teacherInfo .info {
+    padding: 20rpx;
+    display: flex;
+}
+
+.main .teacherInfo .info .left {
+    flex: 2;
+}
+
+.main .teacherInfo .info .left .teacherAvatar {
+    width: 100%;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.main .teacherInfo .info .right {
+    flex: 8;
+    margin-left: 20rpx;
+}
+
+.main .teacherInfo .info .right .teacherIntro {
+    margin-top: 20rpx;
+    font-size: 22rpx;
+}
+
+.main .courseInfo {
+    margin: 20rpx 20rpx;
+}
+
+.main .courseInfo .title {
+    font-size: 40rpx;
+}
+
+.main .courseInfo .info {
+    padding: 20rpx 10rpx;
+}
+
+.main .courseInfo .info .cover {
+    width: 100%;
+    height: 400rpx;
+}
+
+.main .courseInfo .info .desc {
+    margin: 10rpx 0 10rpx;
+    font-size: 32rpx;
+    color: #444;
+}
+
+
+
+.main .comment {
+    margin: 20rpx 20rpx;
+}
+
+.main .comment .title {
+    font-size: 40rpx;
+}
+
+.main .comment .commentItem {
+    margin: 20rpx 10rpx;
+    display: flex;
+}
+
+.main .comment .commentItem .avatar {
+    flex: 2;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.main .comment .commentItem .info {
+    flex: 8;
+    margin-left: 50rpx;
+}
+
+.main .comment .commentItem .info .nickname {
+    font-size: 35rpx;
+}
+
+.main .comment .commentItem .info .content {
+    margin: 10rpx 10rpx;
+    font-size: 25rpx;
+}
+
+.main .comment .commentItem .info .time {
+    text-align: right;
+    margin-right: 20rpx;
+    font-size: 20rpx;
+    color: #888;
+}
+
+.top {
+    display: flex;
+}

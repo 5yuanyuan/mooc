@@ -1,0 +1,9 @@
+<import src="../myCourse/mycourse-template/mycourse-template.wxml"></import>
+<view class="myCourse" wx:if="{{myCollectList.length!=0}}">
+  <section class="myCourseList">
+    <navigator class="course" url="/pages/course/course?courseId={{item.id}}" wx:for="{{myCollectList}}" wx:key="id">
+      <template is="myCourseList" data="{{...item}}"></template>
+    </navigator>
+  </section>
+</view>
+<view class="no-collect" wx:else>暂无收藏，快去收藏课程吧~</view>

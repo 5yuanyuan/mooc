@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/mini-index/mini-index",
+    "pages/msg/msg",
+    "pages/msgContext/msgContext",
+    "pages/usercenter/usercenter",
+    "pages/changePsd/changePsd",
+    "pages/myCourse/myCourse",
+    "pages/login/login",
+    "pages/regist/regist",
+    "pages/info/info",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/coll-course/coll-course",
+    "pages/classify/classify",
+    "pages/search/search",
+    "pages/course/course"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "mini课堂",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#1296db",
+    "backgroundColor": "white",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/mini-index/mini-index",
+        "text": "首页",
+        "iconPath": "/images/index-1.png",
+        "selectedIconPath": "/images/index.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "iconPath": "/images/classify-1.png",
+        "selectedIconPath": "/images/classify.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/myCourse/myCourse",
+        "iconPath": "/images/course-1.png",
+        "selectedIconPath": "/images/course.png",
+        "text": "我的课程"
+      },
+      {
+        "pagePath": "pages/usercenter/usercenter",
+        "text": "个人中心",
+        "iconPath": "/images/user-1.png",
+        "selectedIconPath": "/images/user.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

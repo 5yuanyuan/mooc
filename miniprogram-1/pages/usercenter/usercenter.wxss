@@ -1,0 +1,54 @@
+.head {
+  width: 100%;
+  height: 150rpx;
+}
+
+.userimg {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.name {
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.controlList {
+  margin-top: 20px;
+}
+
+.comm {
+  width: 100%;
+  height: 90rpx;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  padding: 10rpx;
+  line-height: 90rpx;
+  margin-left: 10px;
+  position: relative;
+}
+
+.img {
+  width: 50rpx;
+  height: 50rpx;
+  padding: 3px;
+  margin-top: 3px;
+  vertical-align: middle;
+}
+
+.btn {
+  margin-top: 50px;
+  background-color: #1296db;
+  color: white;
+}
+
+.title {
+  line-height: 150rpx;
+  margin-left: 40rpx;
+  display: inline;
+}
