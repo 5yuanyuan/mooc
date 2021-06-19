@@ -10,7 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50390276-26d5-4ddb-8d72-c2cdec46713e" name="Default Changelist" comment="" />
+    <list default="true" id="50390276-26d5-4ddb-8d72-c2cdec46713e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../miniprogram-1/pages/mini-index/course-template/course-template.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../miniprogram-1/pages/mini-index/course-template/course-template.wxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,10 +26,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1tveeSkVsVP7iMcIA4SpiV9pyDM" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -98,6 +100,7 @@
       <workItem from="1624025715677" duration="1889000" />
       <workItem from="1624028919688" duration="10000" />
       <workItem from="1624062202463" duration="15357000" />
+      <workItem from="1624094233600" duration="59000" />
     </task>
     <servers />
   </component>
