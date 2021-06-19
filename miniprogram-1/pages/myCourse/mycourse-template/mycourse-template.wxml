@@ -1,8 +1,0 @@
-<template name="myCourseList">
-  <image class="img" src="{{cover}}"></image>
-  <view class="text">
-    <view class="title">{{title}}</view>
-    <view class="price" wx:if="{{price>0}}">{{price}}</view>
-    <view class="price" wx:else>免费</view>
-  </view>
-</template>

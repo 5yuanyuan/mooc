@@ -44,7 +44,7 @@
             </ul>
           </nav>
           <div class="sidebar-footer">
-            <p class="copyright">Copyright &copy; 2019. <a target="_blank" href="http://lyear.itshubao.com">IT书包</a> All
+            <p class="copyright">Copyright &copy; 2021. <a target="_blank" href="http://www.baidu.com">miniclass</a> All
               rights reserved.</p>
           </div>
         </div>

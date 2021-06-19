@@ -25,7 +25,7 @@
           </div>
         </form>
         <footer class="col-sm-12 text-center text-white">
-          <p class="m-b-0">Copyright © 2020 <a href="http://lyear.itshubao.com">IT书包</a>. All right reserved</p>
+          <p class="m-b-0">Copyright © 2021 <a href="http://www.baidu.com">miniclass</a>. All right reserved</p>
         </footer>
       </div>
     </div>

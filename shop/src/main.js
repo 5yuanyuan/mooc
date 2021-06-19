@@ -9,11 +9,14 @@ import * as echarts from 'echarts'
 import Banner from "@/components/Banner";
 import ChangeBanner from "@/components/ChangeBanner";
 import ExcellentCourses from "@/components/ExcellentCourses";
+import Course from "@/components/Course";
+import VideoPlayer from 'vue-video-player';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.prototype.GLOBAL = Common
 Vue.prototype.$echarts = echarts
+Vue.use(VideoPlayer)
 
 const routes = [
     {
@@ -49,6 +52,13 @@ const routes = [
                 name: 'ExcellentCourses',
                 components: {
                     content: ExcellentCourses
+                }
+            },
+            {
+                path: 'course',
+                name: 'course',
+                components: {
+                    content: Course
                 }
             }
         ]

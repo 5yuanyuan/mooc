@@ -31,8 +31,6 @@
                 <tr>
                   <th>课程名</th>
                   <th>课程图片</th>
-                  <!--                    <th>详情图片</th>-->
-                  <th>排序</th>
                   <th>操作</th>
                 </tr>
                 </thead>
@@ -40,17 +38,11 @@
                 <tr v-for="item in payCourseList" :key="item.id">
                   <td>{{ item.title }}</td>
                   <td><img :src="`${item.cover}?x-oss-process=image/resize,h_100,m_lfit`"></td>
-                  <!--                    <td><img :src="`${item.detailImage}?x-oss-process=image/resize,h_100,m_lfit`"></td>-->
-                  <td>
-                    <select @change="changeOrder" v-model="item.orderNum">
-                      <option v-for="index of 50" :value="index" :key="index">{{ index }}</option>
-                    </select>
-                  </td>
                   <td>
                     <div class="btn-group">
-                      <a class="btn btn-xs btn-default" @click="goto(item.id)" title="编辑" data-toggle="tooltip"><i
+                      <a class="btn btn-xs btn-default" @click="gotoA(item.id)" title="编辑" data-toggle="tooltip"><i
                           class="mdi mdi-pencil"></i></a>
-                      <a class="btn btn-xs btn-default" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i></a>
+                      <a class="btn btn-xs btn-default" @click="goto(item.id)" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i></a>
                       <a class="btn btn-xs btn-default" title="删除" data-toggle="tooltip"><i
                           class="mdi mdi-window-close"></i></a>
                     </div>
@@ -69,7 +61,6 @@
 <script>
 
 import axios from 'axios'
-import qs from 'qs'
 
 export default {
   name: "ExcellentCourses",
@@ -92,7 +83,7 @@ export default {
         // console.log(token)
         axios.get(that.GLOBAL.API_ROOT + "/api/index", {}).then(function (res) {
               that.payCourseList = res.data.data.vipCourseList
-              console.log(that.payCourseList)
+              // console.log(that.payCourseList)
             },
             function (err) {
               console.log(err)
@@ -110,24 +101,18 @@ export default {
       })
     },
 
-    goAdd: function () {
-      this.$router.push("/change_banner")
+    gotoA: function (id) {
+      var that = this
+      that.$router.push({
+        name: "course",
+        query: {
+          "id": id
+        }
+      })
     },
 
-    changeOrder: function (event) {
-      var that = this
-      let productId = event.target.id
-      let orderNum = event.target.value
-      axios.post(that.GLOBAL.API_ROOT + "/change_product_order", qs.stringify({
-        "productId": productId,
-        "orderNum": orderNum
-      })).then(function (res) {
-            console.log(res)
-            that.loadProducts()
-          },
-          function (err) {
-            console.log(err)
-          })
+    goAdd: function () {
+      this.$router.push("/course")
     }
   },
 }

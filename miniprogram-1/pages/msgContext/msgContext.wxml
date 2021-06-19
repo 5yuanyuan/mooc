@@ -1,9 +1,0 @@
-<view class="head">
-  <image class="img" src="{{form.avatar}}"></image>
-  <view>
-    <view class="name">{{form.postName}}</view>
-    <view class="source">{{form.source}}</view>
-    <view class="title">{{form.title}}</view>
-  </view>
-</view>
-<view class="content">{{form.content}}</view>

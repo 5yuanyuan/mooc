@@ -11,13 +11,20 @@
               </div>
               <div class="form-group col-md-12">
                 <label>封面图片</label>
-                <img :src="`${coverImageUrl}?x-oss-process=image/resize,h_200,m_lfit`">
+                <img :src="`${cover}?x-oss-process=image/resize,h_100,m_lfit`">
                 <input @change="uploadImage" type="file" name="cover_image"/>
               </div>
               <div class="form-group col-md-12">
-                <label>详情图片</label>
-                <img :src="`${detailImageUrl}?x-oss-process=image/resize,h_200,m_lfit`">
-                <input @change="uploadImage" type="file" name="detail_image"/>
+                <label>价格</label>
+                <input v-model="price" type="text" class="form-control"/>
+              </div>
+              <div class="form-group col-md-12">
+                <label>课时数</label>
+                <input v-model="lessonNum" type="text" class="form-control"/>
+              </div>
+              <div class="form-group col-md-12">
+                <label>课程描述</label>
+                <input v-model="description" type="text" class="form-control"/>
               </div>
               <div class="form-group col-md-12">
                 <button @click="save" type="button" class="btn btn-primary ajax-post" target-form="add-form">确 定</button>
@@ -32,30 +39,51 @@
 
 <script>
 import axios from 'axios'
-import qs from 'qs'
 
 export default {
-  name: "AddProduct",
+  name: "ChangeBanner",
   data () {
     return {
-      coverImageUrl: "",
-      detailImageUrl: "",
       title: "",
-      id: this.$route.query.id
+      cover: "",
+      lessonNum: 0,
+      price: 0,
+      description: "",
+      id: this.$route.query.id,
+      gmtCreate: "",
+      gmtModified: "",
+      status: "",
+      subjectId: "",
+      subjectParentId: "",
+      teacherAvatar: "",
+      teacherId: "",
+      teacherIntro: "",
+      teacherName: "",
+      type: 0,
+      viewCount: 0
     }
   },
-  created() {
+  created () {
     var that = this
     if (that.id != null) {
-      axios.get(that.GLOBAL.API_ROOT + '/load_product', {
-        params: {
-          "id": that.id
-        }
-      }).then(res => {
-        // console.log(res.data[0])
-        that.coverImageUrl = res.data[0].coverImage
-        that.detailImageUrl = res.data[0].detailImage
-        that.title = res.data[0].title
+      axios.get(that.GLOBAL.API_ROOT + '/api/eduCourse/getCourseInfo/' + that.id, {}).then(res => {
+        let list = res.data.data
+        that.cover = list.cover
+        that.title = list.title
+        that.price = list.price
+        that.lessonNum = list.lessonNum
+        that.description = list.description
+        that.gmtCreate = list.gmtCreate,
+            that.gmtModified = list.gmtModified,
+            that.status = list.status,
+            that.subjectId = list.status,
+            that.subjectParentId = list.subjectParentId,
+            that.teacherAvatar = list.teacherAvatar,
+            that.teacherId = list.teacherId,
+            that.teacherIntro = list.teacherIntro,
+            that.teacherName = list.teacherName,
+            that.type = list.type,
+            that.viewCount = list.viewCount
       })
     }
   },
@@ -81,11 +109,23 @@ export default {
     },
     save: function () {
       var that = this
-      axios.post(that.GLOBAL.API_ROOT + '/save_image', qs.stringify({
-        "coverImage": that.coverImageUrl,
-        "detailImage": that.detailImageUrl,
-        "title": that.title,
-        "category": "product"
+      axios.put(that.GLOBAL.API_ROOT + '/api/eduCourse/updateCourseInfo', ({
+        "cover": that.cover,
+        "description": that.description,
+        "id": that.id,
+        "lessonNum": that.lessonNum,
+        "price": that.price,
+        "gmtCreate": that.gmtCreate,
+        "gmtModified": that.gmtModified,
+        "status": that.status,
+        "subjectedId": that.subjectId,
+        "subjectParentId": that.subjectParentId,
+        "teacherAvatar": that.teacherAvatar,
+        "teacherId": that.teacherId,
+        "teacherInfo": that.teacherIntro,
+        "teacherName": that.teacherName,
+        "type": that.type,
+        "viewCount": that.viewCount
       })).then(function (res) {
         console.log(res.data)
       })

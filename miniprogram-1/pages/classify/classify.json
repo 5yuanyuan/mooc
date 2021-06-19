@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "FooBar": "/component/FooBar/FooBar",
-    "Line": "/component/Line/Line",
-    "mp-searchbar": "/miniprogram_npm/weui-miniprogram/searchbar/searchbar"
-  }
-}
