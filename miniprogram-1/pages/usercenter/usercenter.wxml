@@ -7,25 +7,43 @@
   </view>
   <!-- 用户登录状态 -->
   <view wx:else class="infocontainer">
-  <mp-form>
-    <mp-cells>
-      <mp-cell title="头像">
-        <image class="weui-vcode-img" src="{{userInfo.avatar}}" bindtap="clickImage"></image>
-      </mp-cell>
-      <mp-cell title="用户名">{{userInfo.name}}</mp-cell>
-      <mp-cell title="手机号">{{userInfo.tel}}</mp-cell>
-      <navigator url="../changePsd/changePsd">
-        <mp-cell link value="密码" footer="修改密码">
+    <mp-form>
+      <mp-cells>
+        <mp-cell title="头像">
+          <image class="weui-vcode-img" src="{{userInfo.avatar}}" bindtap="clickImage"></image>
         </mp-cell>
-      </navigator>
-    </mp-cells>
-  </mp-form>
-  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
-    <block wx:for="{{actionSheetItems}}" wx:key="unique">
-      <action-sheet-item bindtap="{{item.bindtap}}">{{item.txt}}</action-sheet-item>
-    </block>
-    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
-  </action-sheet>
-</view>
+        <mp-cell title="用户名">{{userInfo.name}}</mp-cell>
+        <mp-cell title="手机号">{{userInfo.tel}}</mp-cell>
+        <navigator url="../changePsd/changePsd">
+          <mp-cell link value="密码" footer="修改密码">
+          </mp-cell>
+        </navigator>
+      </mp-cells>
+    </mp-form>
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+      <block wx:for="{{actionSheetItems}}" wx:key="unique">
+        <action-sheet-item bindtap="{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+      </block>
+      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
+  </view>
   <button class="btn" bindtap="exit" wx:if="{{token != '' && token != null}}">退出登录</button>
+
+
+  <view>
+    <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabClick"
+      bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#1296db">
+      <block wx:for="{{tabs}}" wx:key="title">
+        <view data-set="{{item}}" slot="tab-content-{{index}}" bind:tap="handleClick">
+          <image src="{{item.img}}" mode="widthFix"></image>
+          <view>
+            {{item.title2}}
+          </view>
+          <view>
+            {{item.desc}}
+          </view>
+        </view>
+      </block>
+    </mp-tabs>
+  </view>
 </view>
