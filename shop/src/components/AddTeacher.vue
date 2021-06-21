@@ -1,77 +1,72 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid" >
 
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <ul class="nav nav-tabs page-tabs">
-                        <li class="active"> <a href="#!">基本</a> </li>
-                        <li> <a href="lyear-config-system.html">系统</a> </li>
-                        <li> <a href="lyear-config-upload.html">上传</a> </li>
-                    </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active">
-<!--                            <th>姓名</th>-->
-<!--                            <th>电话</th>-->
-<!--                            <th>简介</th>-->
-<!--                            <th>教育经历</th>-->
-<!--                            <th>头像</th>-->
-
-<!--                            <th>等级</th>-->
-<!--                            <th>创建时间</th>-->
-<!--                            <th>上次修改时间</th>-->
-<!--                            <th>排序</th>-->
-                            <form method="post" name="edit-form" class="edit-form">
+<!--                        <div class="tab-pane active">-->
+<!--                            <form name="edit-form" class="edit-form" >-->
                                 <div class="form-group">
-                                    <label for="name">讲师名称</label>
+                                    <label for="name">讲师名称*</label>
                                     <input class="form-control" type="text" name="name" id="name" v-model="teacher.name" placeholder="请输入姓名" >
                                 </div>
                                 <div class="form-group">
-                                    <label for="tel">电话</label>
+                                    <label for="password">密码*</label>
+                                    <input class="form-control" type="text" name="password" id="password" v-model="teacher.password" placeholder="请输入密码" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="tel">电话*</label>
                                     <input class="form-control" type="text" name="tel" id="tel" v-model="teacher.tel" placeholder="请输入电话" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="tel">电话</label>
-                                    <div class="input-group">
-                                        <input class="form-control" type="text" name="tel" id="tel2" v-model="tel" placeholder="请输入姓名" />
-                                        <!--                                        <div class="input-group-btn"><button class="btn btn-default" type="button">上传图片</button></div>-->
+                                    <label for="intro">教师简介*</label>
+                                    <textarea class="form-control" rows="5" name="intro" id="intro" v-model="teacher.intro" placeholder="请输入简介"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="career">教育经历</label>
+                                    <textarea class="form-control" rows="3" id="career" name="career" v-model="teacher.career" placeholder="请输入教师的生涯简介"/>
+                                    <small class="help-block">无需填写全部，仅最近几段即可</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-select">讲师级别</label>
+                                    <div>
+                                        <select class="form-control" v-model="teacher.sort" id="example-select" name="example-select" size="1">
+<!--                                            <option value="0">请选择</option>-->
+                                            <option value="1">1级：初级</option>
+                                            <option value="2">2级：中级</option>
+                                            <option value="3">3级：高级</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="web_site_keywords">站点关键词</label>
-                                    <input class="form-control" type="text" id="web_site_keywords" name="web_site_keywords" value="后台系统模板,LightYear Admin Template,html模板,后台模板,管理系统模板" placeholder="请输入站点关键词" >
-                                    <small class="help-block">网站搜索引擎关键字</small>
+                                    <label >教师头衔*</label>
+                                    <div class="example-box">
+                                        <label class="lyear-radio radio-inline radio-primary">
+                                            <input type="radio"  @click="changeLevel(0)" name="level"><span>高级讲师</span>
+                                        </label>
+                                        <label class="lyear-radio radio-inline radio-primary">
+                                            <input type="radio"  @click="changeLevel(1)" name="level"><span>首席讲师</span>
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="web_site_description">站点描述</label>
-                                    <textarea class="form-control" id="web_site_description" rows="5" name="web_site_description" placeholder="请输入站点描述" >光年(Light Year Admin)后台管理系统模板是一个基于基于Bootstrap v3.3.7的纯HTML模板。</textarea>
-                                    <small class="help-block">网站描述，有利于搜索引擎抓取相关信息</small>
+                                    <label for="avatar">头像</label>
+                                    <div class="input-group">
+<!--                                        <img :src="`${teacher.avatar}?x-oss-process=image/resize,h_100,m_lfit`">-->
+                                        <input type="file" @change="uploadImage" class="form-control" name="avatar" id="avatar"/>
+<!--                                        <input type="text" class="form-control" name="avatar" id="avatar"/>-->
+<!--                                        <div class="input-group-btn"><button class="btn btn-default" type="button">上传图片</button></div>-->
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="web_site_copyright">版权信息</label>
-                                    <input class="form-control" type="text" id="web_site_copyright" name="web_site_copyright" value="" placeholder="请输入版权信息" >
-                                    <small class="help-block">调用方式：<code>config('web_site_copyright')</code></small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="web_site_icp">备案信息</label>
-                                    <input class="form-control" type="text" id="web_site_icp" name="web_site_icp" value="" placeholder="请输入备案信息" >
-                                    <small class="help-block">调用方式：<code>config('web_site_icp')</code></small>
-                                </div>
-                                <div class="form-group">
-                                    <label class="btn-block" for="web_site_status">站点开关</label>
-                                    <label class="lyear-switch switch-solid switch-primary">
-                                        <input type="checkbox" checked="">
-                                        <span></span>
-                                    </label>
-                                    <small class="help-block">站点关闭后将不能访问，后台可正常登录</small>
-                                </div>
-                                <div class="form-group">
-                                    <button @click="submit" class="btn btn-primary m-r-5">确 定</button>
+
+                                <div class="form-group" >
+                                    <button @click="addOrUpdate"  class="btn btn-default">确 定</button>
                                     <button type="button" class="btn btn-default" onclick="javascript:history.back(-1);return false;">返 回</button>
                                 </div>
-                            </form>
+<!--                            </form>-->
 
-                        </div>
+<!--                        </div>-->
                     </div>
 
                 </div>
@@ -83,39 +78,122 @@
 </template>
 
 <script>
+    import qs from 'qs'
+    import axios from "axios";
+
     export default {
         name: "AddTeacher",
         data(){
             return{
                 teacher:{
-                    name: "",
+                    // not null
+                    name:"",
+                    // not null
+                    password:"",
+                    // not null
                     tel:"",
+                    // not null
                     intro:"",
                     career:"",
                     avatar:"",
+                    // not null
                     level:"",
-
-                    //     <td>{{item.gmtCreate}}</td>
-                    //     <td>{{item.gmtModified}}</td>
-                    //     <td>
-                    //     <select :id="item.id" @change="changeOrder" v-model="item.sort">
-                    //         <option v-for="index of 50" :value="index" :key="index">{{index}}</option>
-                    //     </select>
-                    //     </td>
-                    //     <td>
-                    //     <div class="btn-group">
-                    //         <a class="btn btn-xs btn-default" @click="goAdd(item.id)" title="编辑" data-toggle="tooltip"><i class="mdi mdi-pencil"></i></a>
-                    //     <!--                                                    <a class="btn btn-xs btn-default" href="#!" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i></a>-->
-                    //     <a class="btn btn-xs btn-default" @click="deleteById(item)" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i></a>
-                    //     </div>
-                    //     </td>
+                    id:"",
+                    sort:""//讲师级别
                 }
             }
         },
         methods:{
             submit(){
 
-            }
+            },
+            addOrUpdate() {
+                // 判断修改还是添加
+                // 根据teacher是否有id
+                console.log("id=",this.teacher.id)
+                if (this.teacher.id==="") {
+                    console.log("add")
+                    // 添加
+                    this.addTeacher()
+                } else {
+                    console.log("update")
+                    // 修改
+                    this.updateTeacher()
+                }
+            },
+            uploadImage:function (event) {
+                var that = this
+                console.log("传图片")
+                let file = event.target.files[0];
+                that.teacher.avatar = file
+                console.log(file)
+                // let objName = event.target.name;
+                let formData = new FormData();
+                formData.append('file',file);
+                let config = {
+                    headers:{'Content-Type':'multipart/form-data','token':localStorage.getItem("token")}
+                };
+                console.log(config)
+                axios.post(that.GLOBAL.API_ROOT + '/api/oss/uploadAvatar',formData,config)
+                .then(response=>{
+                    console.log(response.data);
+                    that.teacher.avatar = response.data.url;
+                    console.log(that.teacher)
+                })
+            },
+            changeLevel:function(i){
+                this.teacher.level = i;
+            },
+            // 修改讲师的方法
+            updateTeacher() {
+                let config = {
+                    headers:{'Content-Type': 'application/x-www-form-urlencoded','token':localStorage.getItem("token")}
+                };
+                let that = this
+                axios.post(this.GLOBAL.API_ROOT+"/api/eduTeacher/update",qs.stringify(that.teacher),config)
+                    .then(response => {
+                        console.log(response)
+                        // 提示信息
+                        this.$message({
+                            type: 'success',
+                            message: '修改成功!'
+                        })
+                        // 回到列表页面 路由跳转
+                        // this.$router.push({ path: '/teacher/table' })
+                    })
+            },
+            // 添加讲师的方法
+            addTeacher() {
+                console.log("1"+this.GLOBAL.API_ROOT)
+                console.log(JSON.stringify(this.teacher))
+                let config = {
+                    headers:{'Content-Type': 'application/x-www-form-urlencoded','token':localStorage.getItem("token")}
+                };
+                let that = this
+                // this.$http.post(that.GLOBAL.API_ROOT + "/api/add_image",formData,config)
+                axios.post(that.GLOBAL.API_ROOT+ "/api/eduTeacher/addTeacher",qs.stringify(that.teacher),config).then(response => { // 添加成功
+                        console.log('res=',response)
+                        if(response.data.code === 200){
+                            alert("成功")
+                            // 回到列表页面 路由跳转
+                            this.$router.push({ path: '/teacher_list' })
+                        }
+                        else {
+                            alert("失败")
+                        }
+                    },
+                    err=>{
+                        console.log(err)
+                        alert("添加失败")
+                    }
+                )
+            },
+            // 根据id查询讲师
+            getTeacherInfo(id) {
+                axios.get(this.GLOBAL.API_ROOT+ "/api/eduTeacher/getTeacherById/",{
+                    id:id
+                })
+            },
         }
     }
 </script>

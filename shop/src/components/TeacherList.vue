@@ -76,6 +76,7 @@
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         name: "TeacherList",
         data(){
@@ -97,7 +98,7 @@
                 }else{
                     console.log(localStorage.getItem("token"));
                     // that.GLOBAL.API_ROOT
-                    this.$http.get("http://localhost:8002" + "/api/eduTeacher/findAll", {params:{
+                    axios.get("http://localhost:8002" + "/api/eduTeacher/findAll", {params:{
                         },headers:{'token':localStorage.getItem("token")}
                     }).then(
                         function (response) {
@@ -118,7 +119,12 @@
             },
             // eslint-disable-next-line no-unused-vars
             goAdd: function (id) {
-                this.$router.push({name:"add_teacher"})
+                if(id === undefined){
+                    this.$router.push({path:"/add_teacher"})
+                }else{
+                    this.$router.push({path:"/add_teacher",query:{id:id}})
+                }
+
             },
             // eslint-disable-next-line no-unused-vars
             changeOrder:function (event) {
@@ -141,7 +147,7 @@
             deleteById:function (item) {
                 let that =this
                 console.log(item)
-                that.$http.delete("http://localhost:8002" + "/api/eduTeacher/remove/"+item.id).then(
+                axios.delete("http://localhost:8002" + "/api/eduTeacher/remove/"+item.id).then(
                     function () {
                         console.log('success to delete')
                         that.loadTeachers()
