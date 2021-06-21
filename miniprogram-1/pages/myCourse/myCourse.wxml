@@ -1,5 +1,5 @@
 <import src="mycourse-template/mycourse-template.wxml"></import>
-<view class="no-class" wx:if="{{token != '' || token != null}}">暂无课程,快去选课吧！</view>
+<view class="no-class" wx:if="{{myCourse.length == 0}}">暂无课程,快去选课吧！</view>
 <view class="myCourse" wx:else>
   <section class="myCourseList">
     <navigator class="course" url="/pages/course/course?courseId={{item.id}}" wx:for="{{myCourseList}}" wx:key="id">
