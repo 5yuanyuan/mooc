@@ -1,6 +1,6 @@
 <template name="List">
   <image class="imgSize" src="{{cover}}" bindtap="check" data-id='{{id}}'></image>
   <view class="title">{{title}}</view>
-  <view class="price" wx:if="{{price>0}}">{{price}}</view>
-  <view class="price" wx:else>免费</view>
+  <view style="color: red" wx:if="{{price>0}}">￥{{price}}</view>
+  <view style="color: red" wx:else>免费</view>
 </template>

@@ -1,25 +1,28 @@
-/* pages/changePsd/changePsd.wxss */
-/* pages/password/password.wxss */
+.new {
+  height: 150rpx;
+  background-color: #fff;
+  margin: 20rpx;
+}
 
-.new{
+.ok {
   height: 150rpx;
   background-color: #fff;
   margin: 20rpx;
 }
-.ok{
-  height: 150rpx;
-  background-color: #fff;
-  margin: 20rpx;
-}
-text{
+
+text {
   /* margin-top: 50rpx; */
   margin-left: 20rpx;
 }
-input{
+
+input {
   margin-top: 30rpx;
   margin-left: 20rpx;
   border-bottom: 1px solid #777;
 }
-.btn{
+
+.btn {
   margin-top: 50px;
+  background-color: #1296db;
+  color: white;
 }

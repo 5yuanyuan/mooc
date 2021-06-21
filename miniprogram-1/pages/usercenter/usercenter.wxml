@@ -1,31 +1,49 @@
 <view>
   <!-- 用户未登录状态 -->
-  <view class="head" wx:if="{{token == ''||token==null}}">
+  <view class="head" wx:if="{{token == '' || token == null}}">
     <view class="title" bindtap="login">登录</view>
-    /
+    <view class="title">/</view>
     <view class="title" bindtap="regist">注册</view>
   </view>
   <!-- 用户登录状态 -->
-  <view class="head" wx:else>
-    <image class="userimg" src="{{user.avatar}}" alt="头像"></image>
-    <view class="name">{{user.name}}</view>
-    <view>
-      <image class="img" src="../images/money.png"></image>
-      <text style="color: red; font-size: 35rpx">100</text>
-    </view>
+  <view wx:else class="infocontainer">
+    <mp-form>
+      <mp-cells>
+        <mp-cell title="头像">
+          <image class="weui-vcode-img" src="{{userInfo.avatar}}" bindtap="clickImage"></image>
+        </mp-cell>
+        <mp-cell title="用户名">{{userInfo.name}}</mp-cell>
+        <mp-cell title="手机号">{{userInfo.tel}}</mp-cell>
+        <navigator url="../changePsd/changePsd">
+          <mp-cell link value="密码" footer="修改密码">
+          </mp-cell>
+        </navigator>
+      </mp-cells>
+    </mp-form>
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+      <block wx:for="{{actionSheetItems}}" wx:key="unique">
+        <action-sheet-item bindtap="{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+      </block>
+      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
   </view>
-  <!-- 列表 -->
-  <view class="controlList">
-    <view class="info comm">
-      <image class="img" src="../images/info.png"></image>
-      <navigator url="../info/info" style="display:inline" wx:if="{{token!=null}}">个人信息</navigator>
-      <navigator url="../login/login" style="display:inline" wx:else>个人信息</navigator>
-    </view>
-    <view class="colleccourse comm">
-      <image class="img" src="../images/collect.png"></image>
-      <navigator url="../coll-course/coll-course" style="display:inline" wx:if="{{token!=null}}">我的收藏</navigator>
-      <navigator url="../login/login" style="display:inline" wx:else>我的收藏</navigator>
-    </view>
+  <button class="btn" bindtap="exit" wx:if="{{token != '' && token != null}}">退出登录</button>
+
+
+  <view>
+    <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabClick"
+      bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#1296db">
+      <block wx:for="{{tabs}}" wx:key="title">
+        <view data-set="{{item}}" slot="tab-content-{{index}}" bind:tap="handleClick">
+          <image src="{{item.img}}" mode="widthFix"></image>
+          <view>
+            {{item.title2}}
+          </view>
+          <view>
+            {{item.desc}}
+          </view>
+        </view>
+      </block>
+    </mp-tabs>
   </view>
-  <button class="btn" bindtap="exit" wx:if="{{token != ''&&token!=null}}">退出登录</button>
 </view>

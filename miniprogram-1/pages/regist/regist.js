@@ -15,7 +15,7 @@ Page({
     sendCodeUrl: `${app.globalData.baseurl}/api/msm/send/`,
     registUrl: `${app.globalData.baseurl}/api/member/register`
   },
-  //注册中
+  // 注册中
   setregistData1: function () {
     this.setData({
       registBtnTxt: "注册中",
@@ -24,7 +24,7 @@ Page({
       btnLoading: !this.data.btnLoading
     });
   },
-  //未注册
+  // 未注册
   setregistData2: function () {
     this.setData({
       registBtnTxt: "注册",
@@ -33,7 +33,7 @@ Page({
       btnLoading: !this.data.btnLoading
     });
   },
-  //检查手机号
+  // 检查手机号
   checkUserName: function (param) {
     const regu = /^1(3|4|5|7|8)\d{9}$/;
     var inputUserName = param;
@@ -48,7 +48,7 @@ Page({
       return false;
     }
   },
-  //检查密码
+  // 检查密码
   checkPassword: function (param) {
     var password = param.password;
     if (password.length <= 0) {
@@ -62,13 +62,13 @@ Page({
       return true;
     }
   },
-  //获取验证码
+  // 获取验证码
   getSmsCode: function () {
     var phoneNum = this.data.phoneNum;
     var that = this;
     var count = 60;
     if (this.checkUserName(phoneNum)) {
-      //发送验证码
+      // 发送验证码
       wx.request({
         url: that.data.sendCodeUrl + phoneNum,
         data: {},
@@ -97,28 +97,28 @@ Page({
     }
   },
 
-  //获取输入的手机号
+  // 获取输入的手机号
   getPhoneNum: function (e) {
     var value = e.detail.value;
     this.setData({
       phoneNum: value
     });
   },
-  //获取验证码
+  // 获取验证码
   getCode: function (e) {
     var value = e.detail.value;
     this.setData({
       code: value
     });
   },
-  //获取密码
+  // 获取密码
   getPassword: function (e) {
     var value = e.detail.value;
     this.setData({
       password: value
     });
   },
-  //提交表单
+  // 提交表单
   formSubmit: function (e) {
     console.log(e)
     var param = e.detail.value;

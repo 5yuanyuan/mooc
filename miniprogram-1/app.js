@@ -16,9 +16,7 @@ App({
       this.observe(nowData, lastKey, watchFun, deep, page); // 监听nowData对象的lastKey
     })
   },
-  /**
-  * 监听属性 并执行监听函数
-  */
+
   observe(obj, key, watchFun, deep, page) {
     var val = obj[key];
     // 判断deep是true 且 val不能为空 且 typeof val==='object'（数组内数值变化也需要深度监听）
@@ -44,6 +42,7 @@ App({
       }
     })
   },
+
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
@@ -77,6 +76,7 @@ App({
       }
     })
   },
+  
   towxml: new Towxml(),
   globalData: {
     userInfo: null,
