@@ -11,6 +11,8 @@ import ChangeBanner from "@/components/ChangeBanner";
 import ExcellentCourses from "@/components/ExcellentCourses";
 import Course from "@/components/Course";
 import VideoPlayer from 'vue-video-player';
+import TeacherList from "./components/TeacherList";
+import AddTeacher from "./components/AddTeacher";
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -60,7 +62,19 @@ const routes = [
                 components: {
                     content: Course
                 }
-            }
+            },{
+                path:'teacher_list',
+                name:'teacher_list',
+                components:{
+                    content:TeacherList
+                }
+            },{
+                path:'add_teacher',
+                name:'add_teacher',
+                components:{
+                    content:AddTeacher
+                }
+            },
         ]
     }
 ]
