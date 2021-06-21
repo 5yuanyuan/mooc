@@ -21,7 +21,8 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "mini课堂",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#ffffff"
   },
   "tabBar": {
     "color": "#666",

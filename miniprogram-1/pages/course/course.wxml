@@ -41,5 +41,17 @@
     </view>
   </view>
   <Line></Line>
+  <view class="courseInfo">
+    <view class="title">课程大纲</view>
+    <view class="info" wx:for="{{chapterList}}" wx:key="id">
+      <view>
+        <text style="font-size: 35rpx">{{item.title}}</text>
+        <view wx:for="{{item.children}}">
+          <text style="font-size: 25rpx; color: grey">{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <Line></Line>
   <FooBar></FooBar>
 </view>

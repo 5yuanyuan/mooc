@@ -1,9 +1,10 @@
 <view>
   <!-- 用户未登录状态 -->
-  <view class="head" wx:if="{{token == '' || token == null}}">
-    <view class="title" bindtap="login">登录</view>
+  <view class="head" wx:if="{{token === '' || token === null}}">
+    <!-- <view class="title" bindtap="login">登录</view>
     <view class="title">/</view>
-    <view class="title" bindtap="regist">注册</view>
+    <view class="title" bindtap="regist">注册</view> -->
+    <Tab></Tab>
   </view>
   <!-- 用户登录状态 -->
   <view wx:else class="infocontainer">
@@ -24,26 +25,8 @@
       <block wx:for="{{actionSheetItems}}" wx:key="unique">
         <action-sheet-item bindtap="{{item.bindtap}}">{{item.txt}}</action-sheet-item>
       </block>
-      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+      <action-sheet-cancel bindtap="hide" class="cancel">取消</action-sheet-cancel>
     </action-sheet>
   </view>
   <button class="btn" bindtap="exit" wx:if="{{token != '' && token != null}}">退出登录</button>
-
-
-  <view>
-    <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabClick"
-      bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#1296db">
-      <block wx:for="{{tabs}}" wx:key="title">
-        <view data-set="{{item}}" slot="tab-content-{{index}}" bind:tap="handleClick">
-          <image src="{{item.img}}" mode="widthFix"></image>
-          <view>
-            {{item.title2}}
-          </view>
-          <view>
-            {{item.desc}}
-          </view>
-        </view>
-      </block>
-    </mp-tabs>
-  </view>
 </view>

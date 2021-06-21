@@ -1,0 +1,86 @@
+<view class="container">
+    <view class="page-body">
+        <!-- tabs -->
+        <view wx:if="{{tab_config.fixed}}" class="tab-bar">
+            <view wx:for="{{tab_config.tabs}}" wx:key="unique" data-index="{{index}}" bindtap="handlerTabTap"
+                class="tab {{tab_config.active_tab==index?'tab-active':''}} "
+                style="width: {{tab_config.item_width}}px;">
+                <text>{{item}}</text>
+            </view>
+        </view>
+        <scroll-view wx:else class="tab-bar" scroll-x="true" bindscroll="onScroll" style="width: 100%;"
+            scroll-left="{{tab_config.tab_left}}">
+            <view wx:for="{{tab_config.tabs}}" wx:key="unique" data-index="{{index}}" bindtap="handlerTabTap"
+                class="tab {{tab_config.active_tab==index?'tab-active':''}} "
+                style="width: {{tab_config.item_width}}px;">
+                <text>{{item}}</text>
+            </view>
+        </scroll-view>
+        <!-- tabs end -->
+        <!-- tab panel -->
+        <view class="page-section page-section-spacing swiper-wrap">
+            <swiper class="swiper" indicator-dots="{{swipe_config.indicator_dots}}" autoplay="{{swipe_config.autoplay}}"
+                interval="{{swipe_config.interval}}" duration="{{swipe_config.duration}}"
+                current="{{swipe_config.current}}" bindchange="swiperChange">
+                <block wx:for="{{swipe_config.swipes}}">
+                    <swiper-item style="height: 500rpx; width: 100%">
+                        <view class="swiper-item {{item}}">
+                            <form bindsubmit='submitForm'>
+                                <mp-form>
+                                    <mp-cells>
+                                        <mp-cell title="手机号" prop="mobile">
+                                            <input name="mobile" class="weui-input" placeholder="请输入手机号" />
+                                        </mp-cell>
+                                        <mp-cell title="密码" prop="password">
+                                            <input password="true" name="password" class="weui-input"
+                                                placeholder="请输入密码" />
+                                        </mp-cell>
+                                        <mp-cell title="验证码" prop="vcode">
+                                            <input name="vcode" class="weui-input" placeholder="请输入验证码" />
+                                            <text slot="footer" class='left'>{{code}}</text>
+                                            <text slot="footer" class='right' bindtap='huanyizhang'>换一张</text>
+                                        </mp-cell>
+                                    </mp-cells>
+                                    <view class="weui-btn-area">
+                                        <button style="background-color: #1296db; color: white;"
+                                            form-type='submit'>登录</button>
+                                    </view>
+                                </mp-form>
+                            </form>
+                        </view>
+                    </swiper-item>
+                    <swiper-item>
+                        <form bindsubmit="formSubmit">
+                            <mp-form>
+                                <mp-cells>
+                                    <mp-cell title="手机号">
+                                        <input name="username" class="weui-input" placeholder="请输入手机号"
+                                            bindinput="getPhoneNum" />
+                                    </mp-cell>
+                                    <mp-cell title="密码">
+                                        <input name="password" class="weui-input" placeholder="请设置密码" password="true"
+                                            bindinput="getPassword" />
+                                    </mp-cell>
+                                    <mp-cell title="验证码">
+                                        <input name="code" class="weui-input" placeholder="请输入验证码"
+                                            bindinput="getCode" />
+                                        <button slot="footer" size="mini" bindtap="getSmsCode"
+                                            disabled="{{smsCodeDisabled}}"
+                                            style="background-color: #1296db; color: white;">
+                                            {{getSmsCodeBtnTxt}}</button>
+                                    </mp-cell>
+                                </mp-cells>
+                                <view class="btn-area">
+                                    <button
+                                    style="color: white; background-color: #1296db; margin-top: 10rpx" 
+                                    form-type='submit'> {{registBtnTxt}} </button>
+                                </view>
+                            </mp-form>
+                        </form>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <!-- tab panel end -->
+    </view>
+</view>
