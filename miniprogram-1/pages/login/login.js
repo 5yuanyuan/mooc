@@ -80,7 +80,7 @@ Page({
               password: password
             },
             success: (res) => {
-              console.log(res)
+              console.log(res.data)
               if (res.data.code == 200) {
                 wx.showToast({
                   title: '登录成功',
@@ -89,16 +89,22 @@ Page({
                 })
                 wx.setStorageSync('token', res.data.data.token)
                 wx.switchTab({
-                  // url: '../mini-index/mini-index',
                   url: '../../pages/usercenter/usercenter',
-                })
-              } else {
-                wx.showToast({
-                  title: '登录失败',
-                  icon: 'none',
-                  duration: 2000
+                  success: function () {  
+                    var page = getCurrentPages().pop()
+                    if (page == undefined || page == null) return
+                    page.onLoad()
+                  }
                 })
               }
+            },
+            error: (res) => {
+              wx.showToast({
+                title: '登录失败',
+                icon: 'none',
+                duration: 2000
+              })
+              console.log(res)
             }
           })
         }

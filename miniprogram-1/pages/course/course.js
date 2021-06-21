@@ -8,7 +8,21 @@ Page({
     courseId: "",
     courseDetail: {},
     commentList: [],
-    article: ""
+    article: "",
+    chapterList: []
+  },
+
+  getCourseChapter() {
+    wx.request({
+      url: `${this.data.url}/api/eduChapter/getChapterVideo/${this.data.courseId}`,
+      data: {},
+      success: res => {
+        console.log(res.data.data.allVideos)
+        this.setData({
+          chapterList: res.data.data.allVideos
+        })
+      }
+    })
   },
 
   getCourseInfo() {
@@ -40,13 +54,13 @@ Page({
     this.setData({
       courseId: options.courseId
     })
-    this.getCourseInfo();
+    this.getCourseInfo()
+    this.getCourseChapter()
   },
 
   onShow: function () {
     setTimeout(() => {
-      this.getMarkDown();
-    }, 1000);
-
+      this.getMarkDown()
+    }, 1000)
   },
 })
