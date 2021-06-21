@@ -52,7 +52,7 @@
                                         <td>{{item.gmtCreate}}</td>
                                         <td>{{item.gmtModified}}</td>
                                         <td>
-                                            <select :id="item.id" @change="changeOrder" v-model="item.sort">
+                                            <select :id="item.id" v-model="item.sort">
                                                 <option v-for="index of 50" :value="index" :key="index">{{index}}</option>
                                             </select>
                                         </td>
@@ -97,7 +97,6 @@
                     this.$router.push("/login")
                 }else{
                     console.log(localStorage.getItem("token"));
-                    // that.GLOBAL.API_ROOT
                     axios.get("http://localhost:8002" + "/api/eduTeacher/findAll", {params:{
                         },headers:{'token':localStorage.getItem("token")}
                     }).then(
@@ -117,7 +116,6 @@
                     )
                 }
             },
-            // eslint-disable-next-line no-unused-vars
             goAdd: function (id) {
                 if(id === undefined){
                     this.$router.push({path:"/add_teacher"})
@@ -125,24 +123,6 @@
                     this.$router.push({path:"/add_teacher",query:{id:id}})
                 }
 
-            },
-            // eslint-disable-next-line no-unused-vars
-            changeOrder:function (event) {
-                // let productId = event.target.id;
-                // let orderNum = event.tarhget.value;
-                // var that = this
-                // this.$http.post(that.GLOBAL.API_ROOT + "/api/change_product_order", qs.stringify({
-                //     "productId": productId,
-                //     "orderNum": orderNum
-                // })).then(
-                //     function (response) {
-                //         console.log(response.data);
-                //         that.loadProducts();
-                //     },
-                //     function (err) {
-                //         console.log(err);
-                //     }
-                // )
             },
             deleteById:function (item) {
                 let that =this

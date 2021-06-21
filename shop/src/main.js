@@ -13,6 +13,7 @@ import Course from "@/components/Course";
 import VideoPlayer from 'vue-video-player';
 import TeacherList from "./components/TeacherList";
 import AddTeacher from "./components/AddTeacher";
+import SubjectList from "./components/SubjectList";
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -73,6 +74,12 @@ const routes = [
                 name:'add_teacher',
                 components:{
                     content:AddTeacher
+                }
+            },{
+                path:'subject_list',
+                name:'subject_list',
+                components:{
+                    content:SubjectList
                 }
             },
         ]
