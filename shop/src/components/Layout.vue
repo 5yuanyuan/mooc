@@ -48,6 +48,14 @@
                   </li>
                 </ul>
               </li>
+              <li class="nav-item nav-item-has-subnav active open">
+                <a href="javascript:void(0)" data-toggle="dropdown"><i class="mdi mdi-file-outline"></i> 会员管理</a>
+                <ul class="nav nav-subnav">
+                  <li>
+                    <router-link to="/member_list">会员管理</router-link>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </nav>
           <div class="sidebar-footer">

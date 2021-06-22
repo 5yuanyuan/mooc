@@ -170,10 +170,7 @@
                     .then(response => {
                         console.log(response)
                         // 提示信息
-                        this.$message({
-                            type: 'success',
-                            message: '修改成功!'
-                        })
+                        alert("成功")
                         // 回到列表页面 路由跳转
                         this.$router.push({ path: '/teacher_list' })
                     })

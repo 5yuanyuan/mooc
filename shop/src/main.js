@@ -15,6 +15,8 @@ import TeacherList from "./components/TeacherList";
 import AddTeacher from "./components/AddTeacher";
 import SubjectList from "./components/SubjectList";
 import AddSubject from "./components/AddSubject";
+import SubjectTree from "./components/SubjectTree";
+import MemberList from "./components/MemberList";
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -87,6 +89,18 @@ const routes = [
                 name:'add_subject',
                 components:{
                     content:AddSubject
+                }
+            },{
+                path:'subject_tree',
+                name:'subject_tree',
+                components:{
+                    content:SubjectTree
+                }
+            },{
+                path:'member_list',
+                name:'member_list',
+                components:{
+                    content:MemberList
                 }
             }
         ]

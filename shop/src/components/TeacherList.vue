@@ -4,26 +4,26 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
-                        <div class="card-toolbar clearfix">
-                            <form class="pull-right search-bar" method="get" action="#!" role="form">
-                                <div class="input-group">
-                                    <div class="input-group-btn">
-                                        <input type="hidden" name="search_field" id="search-field" value="title">
-                                        <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
-                                            姓名 <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li> <a tabindex="-1" href="javascript:void(0)" data-field="title">姓名</a> </li>
-                                            <li> <a tabindex="-1" href="javascript:void(0)" data-field="cat_name">电话</a> </li>
-                                        </ul>
-                                    </div>
-                                    <input type="text" class="form-control" value="" name="keyword" placeholder="请输入">
-                                </div>
-                            </form>
-                            <div class="toolbar-btn-action">
-                                <a class="btn btn-primary m-r-5" @click="goAdd()"><i class="mdi mdi-plus"></i> 新增</a>
-                            </div>
-                        </div>
+<!--                        <div class="card-toolbar clearfix">-->
+<!--                            <form class="pull-right search-bar" method="get" action="#!" role="form">-->
+<!--                                <div class="input-group">-->
+<!--                                    <div class="input-group-btn">-->
+<!--                                        <input type="hidden" name="search_field" id="search-field" value="title">-->
+<!--                                        <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">-->
+<!--                                            姓名 <span class="caret"></span>-->
+<!--                                        </button>-->
+<!--                                        <ul class="dropdown-menu">-->
+<!--                                            <li> <a tabindex="-1" href="javascript:void(0)" data-field="title">姓名</a> </li>-->
+<!--                                            <li> <a tabindex="-1" href="javascript:void(0)" data-field="cat_name">电话</a> </li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                    <input type="text" class="form-control" value="" name="keyword" placeholder="请输入">-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                            <div class="toolbar-btn-action">-->
+<!--                                <a class="btn btn-primary m-r-5" @click="goAdd()"><i class="mdi mdi-plus"></i> 新增</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" style="table-layout: fixed;word-break: break-all;">
@@ -34,7 +34,6 @@
                                         <th>简介</th>
                                         <th>教育经历</th>
                                         <th>头像</th>
-
                                         <th>职称</th>
                                         <th>创建时间</th>
                                         <th>上次修改时间</th>
@@ -109,10 +108,10 @@
                     }).then(
                         function (response) {
                             that.teacherlist = response.data.data
-                            console.log(response.data);
+                            // console.log(response.data);
                             var i =0;
                             for (i=0;i<that.teacherlist.length;i++){
-                                console.log(new Date(that.teacherlist[i].gmtCreate))
+                                // console.log(new Date(that.teacherlist[i].gmtCreate))
                                 that.teacherlist[i].gmtCreate = new Date(that.teacherlist[i].gmtCreate)
                                 that.teacherlist[i].gmtModified = new Date(that.teacherlist[i].gmtModified)
                             }
@@ -133,7 +132,7 @@
             },
             deleteById:function (item) {
                 let that =this
-                console.log(item)
+                // console.log(item)
                 axios.delete(that.GLOBAL.API_ROOT + "/api/eduTeacher/remove/"+item.id).then(
                     function () {
                         console.log('success to delete')
@@ -149,5 +148,4 @@
 </script>
 
 <style scoped>
-
 </style>
