@@ -8,7 +8,9 @@
   <view class="courseDetail">
   <view class="top">
     <view class="title">{{courseDetail.title}}</view>
-    <button bindtap="buy" wx:if="{{courseDetail.price != 0}}" type="primary" plain="true">购买</button>
+    <button bindtap="buy" type="primary" wx:if="{{canBuy}}">购买</button>
+    <button wx:if="{{canNotBuy}}"
+    type="warn" plain="true">已购买</button>
   </view>
     <view class="msg">
       <view class="price" wx:if="{{courseDetail.price != 0}}">￥{{courseDetail.price}}</view>

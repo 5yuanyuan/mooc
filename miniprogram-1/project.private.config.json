@@ -47,6 +47,12 @@
           "pathName": "pages/course/course",
           "query": "courseId=1336135104330997761",
           "scene": null
+        },
+        {
+          "name": "我的课程",
+          "pathName": "pages/myCourse/myCourse",
+          "query": "",
+          "scene": null
         }
       ]
     }

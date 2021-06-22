@@ -12,6 +12,7 @@ Page({
     console.log('myCourse : ' + this.token)
     this.getMyCourseList()
   },
+
   getMyCourseList() {
     if (this.token === '' || this.token === null) {
       console.log('myCourse : ' + this.token)
@@ -23,7 +24,7 @@ Page({
           'token': wx.getStorageSync('token')
         },
         success: (res) => {
-          console.log(res)
+          console.log(res.data)
           this.setData({
             myCourseList: res.data.data
           })
