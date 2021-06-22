@@ -3,13 +3,11 @@
     <div class="lyear-layout-container">
       <!--左侧导航-->
       <aside class="lyear-layout-sidebar">
-
         <!-- logo -->
         <div id="logo" class="sidebar-header">
           <a href="index.html"><img src="static/images/logo-sidebar.png" title="LightYear" alt="LightYear"/></a>
         </div>
         <div class="lyear-layout-sidebar-scroll">
-
           <nav class="sidebar-main">
             <ul class="nav nav-drawer">
               <li class="nav-item">
@@ -98,10 +96,3 @@
     </div>
   </div>
 </template>
-
-<script>
-
-export default {
-  name: 'Layout'
-}
-</script>
