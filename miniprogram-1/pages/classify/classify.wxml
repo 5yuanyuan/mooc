@@ -5,11 +5,9 @@
     <view class="subItem">
       <navigator url="/pages/search/search?subjectParentId={{item.id}}&searchName={{item.name}}">
         <image class="pic" src="/images/search.png" />
-        <view class="text">{{item.name}}</view>
+        <view class="title">{{item.name}}</view>
       </navigator>
     </view>
-
-
     <view class="content">
       <navigator url="/pages/search/search?subjectId={{item.id}}&searchName={{item.name}}" wx:for="{{item.children}}"
         wx:key="index">
@@ -17,8 +15,7 @@
       </navigator>
     </view>
   </view>
-
 </view>
-<Line></Line>
 
+<Line></Line>
 <FooBar></FooBar>

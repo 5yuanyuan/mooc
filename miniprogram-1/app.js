@@ -78,6 +78,7 @@ App({
   },
   
   towxml: new Towxml(),
+  // 存储全局变量
   globalData: {
     userInfo: null,
     baseurl: 'http://localhost:8002'

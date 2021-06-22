@@ -7,6 +7,7 @@
                     <div class="tab-content">
 <!--                        <div class="tab-pane active">-->
 <!--                            <form name="edit-form" class="edit-form" >-->
+                            <small class="help-block">标星号为必填字段</small>
                                 <div class="form-group">
                                     <label for="name">讲师名称*</label>
                                     <input class="form-control" type="text" name="name" id="name" v-model="teacher.name" placeholder="请输入姓名" >
@@ -100,25 +101,33 @@
                     level:"",
                     id:"",
                     sort:""//讲师级别
-                }
+                },
             }
         },
         methods:{
             submit(){
 
             },
+            checkForm(){
+
+            },
             addOrUpdate() {
-                // 判断修改还是添加
-                // 根据teacher是否有id
-                console.log("id=",this.teacher.id)
-                if (this.teacher.id==="") {
-                    console.log("add")
-                    // 添加
-                    this.addTeacher()
-                } else {
-                    console.log("update")
-                    // 修改
-                    this.updateTeacher()
+                if(this.checkForm()){
+                    // 判断修改还是添加
+                    // 根据teacher是否有id
+                    console.log("id=",this.teacher.id)
+                    if (this.teacher.id==="") {
+                        console.log("add")
+                        // 添加
+                        this.addTeacher()
+                    } else {
+                        console.log("update")
+                        // 修改
+                        this.updateTeacher()
+                    }
+                }
+                else{
+                    alert("请检查信息填写是否正确")
                 }
             },
             uploadImage:function (event) {
@@ -159,7 +168,7 @@
                             message: '修改成功!'
                         })
                         // 回到列表页面 路由跳转
-                        // this.$router.push({ path: '/teacher/table' })
+                        this.$router.push({ path: '/teacher_list' })
                     })
             },
             // 添加讲师的方法

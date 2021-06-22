@@ -5,25 +5,30 @@
 .subject {
   display: flex;
   padding: 20rpx 0;
+  border: 1rpx dotted solid black;
+  border-radius: 5px;
+  margin: 10rpx
+  
 }
 
-.subject .subItem {
+.subItem {
+  margin:40rpx;
   flex: 3
 }
 
-.subject .subItem .pic {
-  width: 50%;
+.pic {
+  width: 100rpx;
   height: 100rpx;
   margin-left: 25%;
 }
 
-.subject .subItem .text {
-  font-size: 26rpx;
+.title {
+  font-size: 30rpx;
   color: blue;
   text-align: center;
 }
 
-.subject .content {
+.content {
   flex: 7;
   display: flex;
   flex-wrap: wrap;
