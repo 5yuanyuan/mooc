@@ -20,63 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4f37a6e-8ec1-4f42-8a56-d8f80794a733" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/mooc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/app.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/apply/apply.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/apply/apply.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/apply/apply.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/apply/apply.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/detail/detail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/detail/detail.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/detail/detail.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/detail/detail.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/friends/friends.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/friends/friends.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/friends/friends.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/friends/friends.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/income/income.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/income/income.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/income/income.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/income/income.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/index/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/index/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/index/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/index/index.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/logs/logs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/logs/logs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/logs/logs.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/logs/logs.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/tips/tips.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/tips/tips.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/tips/tips.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/tips/tips.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/user/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/user/user.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/user/user.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/user/user.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/withdrew/withdrew.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/withdrew/withdrew.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/withdrew/withdrew.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/pages/withdrew/withdrew.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/project.config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/sitemap.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/static/icon/iov-shopping.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/static/icon/iov-shopping2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/static/icon/shangcheng.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/static/icon/shangcheng2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/static/icon/tips.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/static/icon/tips2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/static/icon/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/static/icon/user2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/utils/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mooc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mooc/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniprogram-1/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/miniprogram-1/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniprogram-1/pages/course/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniprogram-1/pages/course/course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniprogram-1/pages/course/course.json" beforeDir="false" afterPath="$PROJECT_DIR$/miniprogram-1/pages/course/course.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniprogram-1/pages/course/course.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/miniprogram-1/pages/course/course.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniprogram-1/pages/myCourse/myCourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniprogram-1/pages/myCourse/myCourse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniprogram-1/project.private.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/miniprogram-1/project.private.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +66,7 @@
       <workItem from="1623757114193" duration="10000" />
       <workItem from="1623925317341" duration="22000" />
       <workItem from="1623929711288" duration="40000" />
+      <workItem from="1624332077978" duration="41000" />
     </task>
     <servers />
   </component>

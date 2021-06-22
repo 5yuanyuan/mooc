@@ -12,8 +12,10 @@ Page({
     chapterList: [],
     buyCourse: false,
     orderId: "",
-    canNotBuy: false,
-    canBuy: true
+    canNotBuy: 0,
+    canBuy: 1,
+    buttons: [{ text: '取消' }, { text: '确定' }],
+    dialogShow: false
   },
 
   getCourseChapter() {
@@ -26,6 +28,32 @@ Page({
           chapterList: res.data.data.allVideos
         })
       }
+    })
+  },
+
+  openConfirm: function () {
+    console.log(this.orderId)
+    this.setData({
+      dialogShow: true
+    })
+  },
+
+  tapDialogButton(e) {
+    console.log(e.detail.index)
+    if (e.detail.index == 1) {
+      wx.request({
+        url: `${this.data.url}/api/tPayLog/queryPayStatus/${this.orderId}`,
+        header: {
+          'token': wx.getStorageSync('token')
+        },
+        success: res => {
+          console.log(res.data)
+          this.canNotBuy = true
+        }
+      })
+    }
+    this.setData({
+      dialogShow: false,
     })
   },
 
@@ -51,7 +79,6 @@ Page({
   },
 
   buy() {
-    console.log('buy')
     wx.request({
       url: `${this.data.url}/api/tOrder/createOrder/${this.data.courseId}`,
       header: {
@@ -60,16 +87,10 @@ Page({
       success: res => {
         console.log(res.data)
         this.orderId = res.data.data.orderId
-        wx.request({
-          url: `${this.data.url}/api/tPayLog/queryPayStatus/${this.orderId}`,
-          header: {
-            'token': wx.getStorageSync('token')
-          },
-          success: res => {
-            console.log(res.data)
-            this.canNotBuy = true
-          }
+        this.setData({
+          orderId: res.data.data.orderId
         })
+        this.openConfirm()
       }
     })
   },
@@ -84,14 +105,16 @@ Page({
       success: res => {
         console.log(res.data)
         if (res.data == false) {
-          this.canBuy = true
-          this.canNotBuy = false
+          this.setData({
+            canBuy: 1,
+            canNotBuy: 0
+          })
         } else {
-          this.canBuy = false
-          this.canNotBuy = true
+          this.setData({
+            canBuy: 0,
+            canNotBuy: 1
+          })
         }
-        console.log(this.canNotBuy)
-        console.log(this.canBuy)
       }
     })
   },
