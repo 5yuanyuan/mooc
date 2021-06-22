@@ -4,7 +4,7 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
-            <form action="#!" method="post" class="row">
+<!--            <form action="#!" method="post" class="row">-->
               <div class="form-group col-md-12">
                 <label>标题</label>
                 <input v-model="title" type="text" class="form-control"/>
@@ -29,7 +29,7 @@
               <div class="form-group col-md-12">
                 <button @click="save" type="button" class="btn btn-primary ajax-post" target-form="add-form">确 定</button>
               </div>
-            </form>
+<!--            </form>-->
           </div>
         </div>
       </div>
