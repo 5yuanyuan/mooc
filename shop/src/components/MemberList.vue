@@ -30,7 +30,10 @@
 <!--                                        <td v-if="item.level===1">首席讲师</td>-->
                                         <td>
                                             <div class="btn-group">
-                                                <a class="btn btn-xs btn-default" @click="goAdd(item.id)" title="编辑" data-toggle="tooltip"><i class="mdi mdi-pencil"></i></a>
+<!--                                                <a class="btn btn-xs btn-default" @click="goAdd(item.id)" title="编辑" data-toggle="tooltip"><i class="mdi mdi-pencil"></i></a>-->
+                                                <div class="toolbar-btn-action">
+                                                    <a class="btn btn-primary m-r-5" @click="goAdd()"><i class="mdi mdi-plus"></i> 新增课程</a>
+                                                </div>
                                                 <!--                                                    <a class="btn btn-xs btn-default" href="#!" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i></a>-->
 <!--                                                <a class="btn btn-xs btn-default" @click="deleteById(item)" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i></a>-->
                                             </div>

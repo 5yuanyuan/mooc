@@ -59,18 +59,18 @@
       <div class="col-lg-6">
         <div class="card">
           <div class="card-header">
-            <h4>收入报表</h4>
+            <h4>登录人数</h4>
           </div>
-          <div class="card-body" id="incomeReport" style="width: 700px; height: 600px">
+          <div class="card-body" id="login_num" style="width: 700px; height: 600px">
           </div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="card">
           <div class="card-header">
-            <h4>销售收入对比表</h4>
+            <h4>注册人数</h4>
           </div>
-          <div class="card-body" id="saleIncomeReport" style="width: 700px; height: 600px">
+          <div class="card-body" id="register_num" style="width: 700px; height: 600px">
           </div>
         </div>
       </div>
@@ -85,14 +85,14 @@ export default {
   name: "Report",
   data() {
     return {
-      saleTotalList: []
+      loginList1: [],
+      loginList2: []
     }
   },
   mounted() {
-    this.readReportDate()
-    this.readSaleIncome()
+    this.readLoginNum()
+    this.readRegisterNum()
   },
-
   methods: {
     showSaleIncomeReport: function (saleMoneyList, saleMonthList, level1List, level2List) {
       let saleIncomeReport = this.$echarts.init(document.getElementById('saleIncomeReport'))
@@ -306,9 +306,42 @@ export default {
                 console.log(err)
               })
     },
+    readLoginNum() {
+      var that = this
+      axios.get(that.GLOBAL.API_ROOT + "/api/statisticsDaily/showData/login_num/2020-1-1/2020-12-30").then(
+              function (response) {
+                console.log(response.data.data.date_calculatedList)
+                that.loginList1 = response.data.data.date_calculatedList;
+              },
+              function (err) {
+                console.log(err);
+              }
+      )
+    },
+    showLoginNum(){
+      let LoginChart = this.$echarts.init(document.getElementById('login_num'))
+      var option = {
+        xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          type: 'line',
+          smooth: true
+        }]
+      };
+      LoginChart.setOption(option)
+    },
+    readRegisterNum() {
 
-    
-  }
+    }
+
+  },
+
 }
 </script>
 
