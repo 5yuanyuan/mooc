@@ -39,17 +39,11 @@
                   <tr v-for="item in bannerList" :key="item.id">
                     <td>{{ item.title }}</td>
                     <td><img :src="`${item.imageUrl}?x-oss-process=image/resize,h_100,m_lfit`"></td>
-<!--                    <td><img :src="`${item.detailImage}?x-oss-process=image/resize,h_100,m_lfit`"></td>-->
-<!--                    <td>-->
-<!--                      <select @change="changeOrder" v-model="item.orderNum">-->
-<!--                        <option v-for="index of 50" :value="index" :key="index">{{ index }}</option>-->
-<!--                      </select>-->
-<!--                    </td>-->
                     <td>
                       <div class="btn-group">
                         <a class="btn btn-xs btn-default" @click="goto(item.id)" title="编辑" data-toggle="tooltip"><i class="mdi mdi-pencil"></i>编辑</a>
                         <a class="btn btn-xs btn-default" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i>查看</a>
-                        <a class="btn btn-xs btn-default" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i>删除</a>
+                        <a class="btn btn-xs btn-default" @click="myconfirm(item.id)" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i>删除</a>
                       </div>
                     </td>
                   </tr>
@@ -66,7 +60,7 @@
 <script>
 
 import axios from 'axios'
-import qs from 'qs'
+// import qs from 'qs'
 
 export default {
   name: "ProductList",
@@ -79,6 +73,7 @@ export default {
   mounted() {
     this.loadProducts()
   },
+
   methods: {
     loadProducts: function () {
       var that = this
@@ -87,7 +82,7 @@ export default {
         that.$router.push("/login")
       } else {
         // console.log(token)
-        axios.get(that.GLOBAL.API_ROOT + "/api/eduBanner", {
+        axios.get(that.GLOBAL.API_ROOT + "/api/eduBanner/getAllBanner", {
         }).then(function (res) {
           that.bannerList = res.data.data
           console.log(that.bannerList)
@@ -108,25 +103,23 @@ export default {
       })
     },
 
+    myconfirm (id) {
+      if(confirm('确定要删除吗')==true){
+        this.delBanner(id)
+      }
+    },
+
+    delBanner: function (id) {
+      var that = this
+      axios.delete(that.GLOBAL.API_ROOT + '/api/eduBanner/remove/' + id).then(res => {
+        console.log(res)
+        that.loadProducts()
+      })
+    },
+
     goAdd: function () {
       this.$router.push("/change_banner")
     },
-
-    changeOrder: function (event) {
-      var that = this
-      let productId = event.target.id
-      let orderNum = event.target.value
-      axios.post(that.GLOBAL.API_ROOT + "/change_product_order", qs.stringify({
-        "productId": productId,
-        "orderNum": orderNum
-      })).then(function (res) {
-            console.log(res)
-            that.loadProducts()
-          },
-          function (err) {
-            console.log(err)
-          })
-    }
   },
 }
 </script>

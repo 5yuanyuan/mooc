@@ -81,7 +81,7 @@ App({
   // 存储全局变量
   globalData: {
     userInfo: null,
-    baseurl: 'http://localhost:8002'
-    // baseurl: 'http://10.7.189.92:8002'
+    // baseurl: 'http://localhost:8002'
+    baseurl: 'http://10.7.189.92:8002'
   }
 })
