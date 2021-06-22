@@ -153,6 +153,7 @@ export default {
       chapterList: []
     }
   },
+
   created () {
     var that = this
     if (that.id != null) {
@@ -184,6 +185,7 @@ export default {
       }
     })
   },
+
   methods: {
     changeVideo: function (event) {
       var that = this

@@ -67,7 +67,15 @@ export default {
   created() {
     var that = this
     if (that.id != null) {
+      that.getImage()
+    }
+  },
+
+  methods: {
+    getImage: function () {
+      var that = this
       axios.get(that.GLOBAL.API_ROOT + '/api/eduCourse/getCourseInfo/' + that.id, {}).then(res => {
+        console.log(res.data)
         let list = res.data.data
         that.cover = list.cover
         that.title = list.title
@@ -86,16 +94,14 @@ export default {
             that.type = list.type,
             that.viewCount = list.viewCount
       })
-    }
-  },
+    },
 
-  methods: {
     uploadImage: function (event) {
       var that = this
       let file = event.target.files[0]
-      console.log(file)
       let formData = new FormData()
       formData.append('file', file)
+      console.log(file)
       let config = {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -103,9 +109,11 @@ export default {
         }
       }
       axios.post(that.GLOBAL.API_ROOT + '/api/eduBanner/add', formData, config)
-      .then(response => {
-        console.log(response.data)
-      })
+          .then(response => {
+            console.log(response.data)
+            alert('上传成功！')
+            this.getImage()
+          })
     },
 
     save: function () {

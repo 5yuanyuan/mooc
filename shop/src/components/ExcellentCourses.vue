@@ -42,8 +42,8 @@
                     <div class="btn-group">
                       <a class="btn btn-xs btn-default" @click="gotoA(item.id)" title="编辑" data-toggle="tooltip"><i
                           class="mdi mdi-pencil"></i></a>
-                      <a class="btn btn-xs btn-default" @click="goto(item.id)" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i></a>
-                      <a class="btn btn-xs btn-default" title="删除" data-toggle="tooltip"><i
+                      <a class="btn btn-xs btn-default" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i></a>
+                      <a class="btn btn-xs btn-default" @click="delClass(item.id)" title="删除" data-toggle="tooltip"><i
                           class="mdi mdi-window-close"></i></a>
                     </div>
                   </td>
@@ -73,6 +73,7 @@ export default {
   mounted() {
     this.loadProducts()
   },
+
   methods: {
     loadProducts: function () {
       var that = this
@@ -113,6 +114,15 @@ export default {
 
     goAdd: function () {
       this.$router.push("/course")
+    },
+
+    delClass: function (id) {
+      var that = this
+      if (confirm('确定要删除吗？') === true) {
+        axios.delete(that.GLOBAL.API_ROOT + '/api/eduCourse/removeCourseInfo/' + id).then(res => {
+          console.log(res)
+        })
+      }
     }
   },
 }

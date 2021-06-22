@@ -43,7 +43,7 @@
                       <div class="btn-group">
                         <a class="btn btn-xs btn-default" @click="goto(item.id)" title="编辑" data-toggle="tooltip"><i class="mdi mdi-pencil"></i>编辑</a>
                         <a class="btn btn-xs btn-default" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i>查看</a>
-                        <a class="btn btn-xs btn-default" @click="myconfirm(scope.row)" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i>删除</a>
+                        <a class="btn btn-xs btn-default" @click="myconfirm(item.id)" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i>删除</a>
                       </div>
                     </td>
                   </tr>
@@ -70,9 +70,6 @@ export default {
     }
   },
 
-  components: {
-  },
-
   mounted() {
     this.loadProducts()
   },
@@ -85,7 +82,7 @@ export default {
         that.$router.push("/login")
       } else {
         // console.log(token)
-        axios.get(that.GLOBAL.API_ROOT + "/api/eduBanner", {
+        axios.get(that.GLOBAL.API_ROOT + "/api/eduBanner/getAllBanner", {
         }).then(function (res) {
           that.bannerList = res.data.data
           console.log(that.bannerList)
@@ -106,9 +103,9 @@ export default {
       })
     },
 
-    myconfirm (row) {
+    myconfirm (id) {
       if(confirm('确定要删除吗')==true){
-        this.delBanner(row)
+        this.delBanner(id)
       }
     },
 
@@ -116,6 +113,7 @@ export default {
       var that = this
       axios.delete(that.GLOBAL.API_ROOT + '/api/eduBanner/remove/' + id).then(res => {
         console.log(res)
+        that.loadProducts()
       })
     },
 
