@@ -29,22 +29,29 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item nav-item-has-subnav">
-                <a href="javascript:void(0)"><i class="mdi mdi-language-javascript"></i> JS 插件</a>
+              <li class="nav-item nav-item-has-subnav active open">
+                <a href="javascript:void(0)" data-toggle="dropdown"><i class="mdi mdi-file-outline"></i> 课程管理</a>
                 <ul class="nav nav-subnav">
-                  <li><a href="lyear_js_datepicker.html">日期选取器</a></li>
-                  <li><a href="lyear_js_sliders.html">滑块</a></li>
-                  <li><a href="lyear_js_colorpicker.html">选色器</a></li>
-                  <li><a href="lyear_js_chartjs.html">Chart.js</a></li>
-                  <li><a href="lyear_js_jconfirm.html">对话框</a></li>
-                  <li><a href="lyear_js_tags_input.html">标签插件</a></li>
-                  <li><a href="lyear_js_notify.html">通知消息</a></li>
+                  <li>
+                    <router-link to="/course">课程管理</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/subject_list">课程归类管理</router-link>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav active open">
+                <a href="javascript:void(0)" data-toggle="dropdown"><i class="mdi mdi-file-outline"></i> 教师管理</a>
+                <ul class="nav nav-subnav">
+                  <li>
+                    <router-link to="/teacher_list">教师管理</router-link>
+                  </li>
                 </ul>
               </li>
             </ul>
           </nav>
           <div class="sidebar-footer">
-            <p class="copyright">Copyright &copy; 2021. <a target="_blank" href="http://www.baidu.com">miniclass</a> All
+            <p class="copyright">Copyright &copy; 2021. <a target="_blank" href="#">miniclass</a> All
               rights reserved.</p>
           </div>
         </div>

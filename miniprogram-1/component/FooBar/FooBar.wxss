@@ -4,12 +4,12 @@
     margin-bottom: 20rpx;
 }
 
-.fooBar .pic {
-    width: 180rpx;
+.pic {
+    width: 200rpx;
     height: 120rpx;
 }
 
-.fooBar .text {
+.text {
     font-size: 14rpx;
     color: #888;
 }

@@ -39,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,12 +53,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\jessica\workspcae\GitHub\mooc2\shop\public\static\images" />
+      <recent name="D:\jessica\workspcae\GitHub\mooc2\shop\public\static\images\users" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\jessica\workspcae\GitHub\mooc2\shop\src\assets" />
       <recent name="D:\jessica\workspcae\GitHub\mooc2\shop\src\components" />
       <recent name="E:\study\junior\mooc\shop\src\components" />
       <recent name="E:\study\junior\mooc\shop\public\static\images\users" />
       <recent name="E:\study\junior\shop\src\components" />
-      <recent name="E:\study\junior\shop\public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm serve">
@@ -132,10 +136,27 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1624013026870">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="524" y="175" key="FileChooserDialogImpl" timestamp="1624323856575">
+      <screen x="0" y="0" width="1466" height="864" />
     </state>
+    <state x="524" y="175" key="FileChooserDialogImpl/0.0.1466.864@0.0.1466.864" timestamp="1624323856575" />
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1624013026870" />
+    <state width="1424" height="224" key="GridCell.Tab.0.bottom" timestamp="1624323902550">
+      <screen x="0" y="0" width="1466" height="864" />
+    </state>
+    <state width="1424" height="224" key="GridCell.Tab.0.bottom/0.0.1466.864@0.0.1466.864" timestamp="1624323902550" />
+    <state width="1424" height="224" key="GridCell.Tab.0.center" timestamp="1624323902549">
+      <screen x="0" y="0" width="1466" height="864" />
+    </state>
+    <state width="1424" height="224" key="GridCell.Tab.0.center/0.0.1466.864@0.0.1466.864" timestamp="1624323902549" />
+    <state width="1424" height="224" key="GridCell.Tab.0.left" timestamp="1624323902549">
+      <screen x="0" y="0" width="1466" height="864" />
+    </state>
+    <state width="1424" height="224" key="GridCell.Tab.0.left/0.0.1466.864@0.0.1466.864" timestamp="1624323902549" />
+    <state width="1424" height="224" key="GridCell.Tab.0.right" timestamp="1624323902550">
+      <screen x="0" y="0" width="1466" height="864" />
+    </state>
+    <state width="1424" height="224" key="GridCell.Tab.0.right/0.0.1466.864@0.0.1466.864" timestamp="1624323902550" />
     <state x="377" y="34" key="SettingsEditor" timestamp="1624238191985">
       <screen x="0" y="0" width="1466" height="864" />
     </state>

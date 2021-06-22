@@ -1,3 +1,4 @@
+// 先申明app变量 用于获取全局变量
 var app = getApp();
 Page({
 

@@ -2,7 +2,7 @@
   <mp-form>
     <mp-cells>
       <mp-cell title="头像">
-        <image class="weui-vcode-img" src="{{userImg}}" bindtap="clickImage"></image>
+        <image mode="fix" class="weui-vcode-img" src="{{userImg}}" bindtap="clickImage"></image>
       </mp-cell>
       <mp-cell title="用户名">{{userInfo.name}}</mp-cell>
       <mp-cell title="手机号">{{userInfo.tel}}</mp-cell>
