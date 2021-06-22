@@ -16,6 +16,7 @@ import SubjectList from "./components/SubjectList";
 import AddSubject from "./components/AddSubject";
 import SubjectTree from "./components/SubjectTree";
 import MemberList from "./components/MemberList";
+import AlreadyBuy from "@/components/AlreadyBuy";
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -47,7 +48,7 @@ const routes = [
             },
             {
                 path: 'excellent_courses',
-                name: 'ExcellentCourses',
+                name: 'excellent_courses',
                 components: {
                     content: ExcellentCourses
                 }
@@ -82,17 +83,24 @@ const routes = [
                 components: {
                     content: AddSubject
                 }
-            },{
-                path:'subject_tree',
-                name:'subject_tree',
-                components:{
-                    content:SubjectTree
+            }, {
+                path: 'subject_tree',
+                name: 'subject_tree',
+                components: {
+                    content: SubjectTree
                 }
-            },{
-                path:'member_list',
-                name:'member_list',
-                components:{
-                    content:MemberList
+            }, {
+                path: 'member_list',
+                name: 'member_list',
+                components: {
+                    content: MemberList
+                }
+            },
+            {
+                path: 'already_buy',
+                name: 'already_buy',
+                components: {
+                    content: AlreadyBuy
                 }
             }
         ]

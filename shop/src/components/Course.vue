@@ -104,12 +104,12 @@
 
 <script>
 import axios from "axios";
-import 'video.js/dist/video-js.css'
+import 'video.js/dist/video-js.css';
 
 export default {
   name: "ChangeBanner",
   components: {},
-  data() {
+  data () {
     return {
       title: "",
       cover: "",
@@ -187,20 +187,15 @@ export default {
   },
 
   methods: {
-    changeVideo: function (event) {
-      var that = this
-      let video = event.target.files[0]
-      let formData = new FormData()
-      formData.append('eduVideo', video)
-      console.log(video)
-      axios.post(that.GLOBAL.API_ROOT + '/api/eduVideo/addVideo')
-    },
-
     uploadImage: function (event) {
+      var that = this
       let file = event.target.files[0]
       let formData = new FormData()
       formData.append('file', file)
       console.log(file)
+      axios.post(that.GLOBAL.API_ROOT + '/api/oss/uploadAvatar', formData).then(res => {
+        that.cover = res.data.data.url
+      })
     },
 
     save: function () {
@@ -223,7 +218,8 @@ export default {
         "type": that.type,
         "viewCount": that.viewCount
       })).then(function (res) {
-        alert(res.data.data)
+        console.log(res.data)
+          location.reload()
       })
     }
   }

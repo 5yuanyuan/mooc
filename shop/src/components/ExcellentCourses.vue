@@ -40,7 +40,7 @@
                   <td><img :src="`${item.cover}?x-oss-process=image/resize,h_100,m_lfit`"></td>
                   <td>
                     <div class="btn-group">
-                      <a class="btn btn-xs btn-default" @click="gotoA(item.id)" title="编辑" data-toggle="tooltip"><i
+                      <a class="btn btn-xs btn-default" @click="goto(item.id)" title="编辑" data-toggle="tooltip"><i
                           class="mdi mdi-pencil"></i></a>
                       <a class="btn btn-xs btn-default" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i></a>
                       <a class="btn btn-xs btn-default" @click="delClass(item.id)" title="删除" data-toggle="tooltip"><i
@@ -93,16 +93,6 @@ export default {
     },
 
     goto: function (id) {
-      var that = this
-      that.$router.push({
-        name: "change_banner",
-        query: {
-          "id": id
-        }
-      })
-    },
-
-    gotoA: function (id) {
       var that = this
       that.$router.push({
         name: "course",

@@ -89,6 +89,7 @@ Page({
             this.setData({
               userImg: JSON.parse(res.data).data.url
             })
+            this.getUserInfo()
             // 修改用户信息
             wx.request({
               url: `${app.globalData.baseurl}/api/member/update`,
