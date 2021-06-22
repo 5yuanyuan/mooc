@@ -31,6 +31,7 @@ const routes = [
     {
         path: '/',
         component: Layout,
+        redirect: '/report',
         children: [
             {
                 path: 'banner_list',

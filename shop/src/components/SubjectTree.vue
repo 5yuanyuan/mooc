@@ -14,116 +14,21 @@
 
 <script>
     import * as echarts from 'echarts'
+    import axios from "axios";
     // import axios from 'axios'
     export default {
         name: "SubjectTree",
         data(){
           return{
+              List:[],
+              tree:[],
               data:{
                   "name": "subject",
-                  "children": [
-                      {
-                          "name": "analytics",
-                          "children": [
-                              {"name": "cluster",},
-                              {"name": "graph",},
-                              {"name": "optimization",}
-                          ]
-                      },
-                      {
-                          "name": "animate",
-                          "children": [
-                              {"name": "Easing", "value": 17010},
-                              {"name": "FunctionSequence", "value": 5842},
-                              {"name": "interpolate",},
-                              {"name": "ISchedulable", "value": 1041},
-                          ]
-                      },
-                      {
-                          "name": "data",
-                          "children": [
-                              {"name": "converters",},
-                              {"name": "DataField", "value": 1759},
-                              {"name": "DataSchema", "value": 2165},
-                              {"name": "DataSet", "value": 586},
-                              {"name": "DataSource", "value": 3331},
-                              {"name": "DataTable", "value": 772},
-                              {"name": "DataUtil", "value": 3322}
-                          ]
-                      },
-                      {
-                          "name": "display",
-                          "children": [
-                              {"name": "DirtySprite", "value": 8833},
-                              {"name": "LineSprite", "value": 1732},
-                              {"name": "RectSprite", "value": 3623},
-                              {"name": "TextSprite", "value": 10066}
-                          ]
-                      },
-                      {
-                          "name": "flex",
-                          "children": [
-                              {"name": "FlareVis", "value": 4116}
-                          ]
-                      },
-                      {
-                          "name": "physics",
-                          "children": [
-                              {"name": "DragForce", "value": 1082},
-                              {"name": "GravityForce", "value": 1336},
-                              {"name": "IForce", "value": 319},
-                              {"name": "NBodyForce", "value": 10498},
-                              {"name": "Particle", "value": 2822},
-                              {"name": "Simulation", "value": 9983},
-                              {"name": "Spring", "value": 2213},
-                              {"name": "SpringForce", "value": 1681}
-                          ]
-                      },
-                      {
-                          "name": "query",
-                          "children": [
-                              {"name": "AggregateExpression", "value": 1616},
-                              {"name": "And", "value": 1027},
-                              {"name": "Arithmetic", "value": 3891},
-                              {"name": "Average", "value": 891},
-                              {"name": "BinaryExpression", "value": 2893},
-                          ]
-                      },
-                      {
-                          "name": "scale",
-                          "children": [
-                              {"name": "IScaleMap", "value": 2105},
-                              {"name": "LinearScale", "value": 1316},
-                          ]
-                      },
-                      {
-                          "name": "util",
-                          "children": [
-                              {"name": "Arrays", "value": 8258},
-                              {"name": "Colors", "value": 10001},
-                          ]
-                      },
-                      {
-                          "name": "vis",
-                          "children": [
-                              {"name": "axis",},
-                              {"name": "controls",},
-                              {"name": "data",},
-                              {"name": "events",},
-                              {"name": "legend",},
-                              {"name": "operator",},
-                              {"name": "Visualization", "value": 16540}
-                          ]
-                      }
-                  ]
+                  "children":this.tree,
               }
-
           }
         },
         methods:{
-            getData:function(){
-
-            },
             subjectTree:function () {
                 // var that = this
                 var myChart = echarts.init(document.getElementById('main'));
@@ -177,10 +82,36 @@
                     ]
                 };
                 myChart.setOption(option);
-            }
+            },
+            getSubjectList:function () {
+                let config = {
+                    headers:{'token':localStorage.getItem("token")}
+                };
+                var that = this;
+                axios.get(that.GLOBAL.API_ROOT + '/api/eduSubject/getSubject/list',config).then(response=>{
+                    console.log(response.data.data);
+                    that.List=response.data.data
+                    var l1 = that.List.length
+                    var i =0;
+                    for(i=0;i<l1;i++){
+                        var node = {}
+                        node.name = that.List[i].name;
+                        node.children = []
+                        var j=0;
+                        var l2 = that.List[i].children.length
+                        for(j=0;j<l2;j++){
+                            node.children.push({"name":that.List[i].children[j].name})
+                        }
+                        this.tree.push(node)
+                    }
+                    console.log(that.tree)
+                    that.data.children = that.tree
+                    that.subjectTree()
+                })
+            },
         },
         mounted() {
-            this.subjectTree()
+            this.getSubjectList()
         }
     }
 </script>

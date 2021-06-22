@@ -16,7 +16,7 @@
                   首页
                 </router-link>
               </li>
-              <li class="nav-item nav-item-has-subnav active open">
+              <li class="nav-item nav-item-has-subnav open">
                 <a href="javascript:void(0)" data-toggle="dropdown"><i class="mdi mdi-file-outline"></i> 首页管理</a>
                 <ul class="nav nav-subnav">
                   <li>
@@ -27,18 +27,21 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item nav-item-has-subnav active open">
+              <li class="nav-item nav-item-has-subnav">
                 <a href="javascript:void(0)" data-toggle="dropdown"><i class="mdi mdi-file-outline"></i> 课程管理</a>
                 <ul class="nav nav-subnav">
                   <li>
                     <router-link to="/excellent_courses">课程管理</router-link>
                   </li>
                   <li>
+                    <router-link to="/subject_tree">课程归类查看</router-link>
+                  </li>
+                  <li>
                     <router-link to="/subject_list">课程归类管理</router-link>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item nav-item-has-subnav active open">
+              <li class="nav-item nav-item-has-subnav">
                 <a href="javascript:void(0)" data-toggle="dropdown"><i class="mdi mdi-file-outline"></i> 教师管理</a>
                 <ul class="nav nav-subnav">
                   <li>
@@ -46,7 +49,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item nav-item-has-subnav active open">
+              <li class="nav-item nav-item-has-subnav">
                 <a href="javascript:void(0)" data-toggle="dropdown"><i class="mdi mdi-file-outline"></i> 会员管理</a>
                 <ul class="nav nav-subnav">
                   <li>
