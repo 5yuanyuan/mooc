@@ -82,6 +82,7 @@ App({
   globalData: {
     userInfo: null,
     // baseurl: 'http://localhost:8002'
-    baseurl: 'http://10.7.189.92:8002'
+    // baseurl: 'http://10.7.189.92:8002'
+    baseurl: 'http://192.168.43.205:8002'
   }
 })
