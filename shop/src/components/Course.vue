@@ -60,11 +60,42 @@
         </div>
 
         <div class="tab-pane fade" id="profile-basic">
-          <video-player class="video-player vjs-custom-skin"
-                        ref="videoPlayer"
-                        :playsinline="true"
-                        :options="playerOptions">
-          </video-player>
+          <div>
+            <table class="table table-bordered" align="center">
+              <thead>
+              <tr>
+                <th>章节</th>
+                <th>小节</th>
+                <th>视频</th>
+                <th>操作</th>
+              </tr>
+              </thead>
+              <tbody v-for="item1 in chapterList" :key="item1.id">
+              <tr style="font-weight: bold; height: 50px;">{{ item1.title }}</tr>
+              <tr v-for="item2 in item1.children" :key="item2.id">
+                <td></td>
+                <td>{{ item2.title }}</td>
+                <td width="200px">
+                  <video-player class="video-player vjs-custom-skin"
+                                ref="videoPlayer"
+                                :playsinline="true"
+                                :options="playerOptions">
+                  </video-player>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <a class="btn btn-xs btn-default" title="编辑" data-toggle="tooltip"><i
+                        class="mdi mdi-pencil"></i></a>
+                    <a class="btn btn-xs btn-default" title="查看" data-toggle="tooltip"><i
+                        class="mdi mdi-eye"></i></a>
+                    <a class="btn btn-xs btn-default" title="删除" data-toggle="tooltip"><i
+                        class="mdi mdi-window-close"></i></a>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -73,14 +104,11 @@
 
 <script>
 import axios from "axios";
-import {videoPlayer} from 'vue-video-player'
 import 'video.js/dist/video-js.css'
 
 export default {
   name: "ChangeBanner",
-  components: {
-    videoPlayer
-  },
+  components: {},
   data() {
     return {
       title: "",
@@ -121,10 +149,11 @@ export default {
           remainingTimeDisplay: false, // 是否显示剩余时间功能
           fullscreenToggle: true       // 是否显示全屏按钮
         }
-      }
+      },
+      chapterList: []
     }
   },
-  created() {
+  created () {
     var that = this
     if (that.id != null) {
       axios.get(that.GLOBAL.API_ROOT + '/api/eduCourse/getCourseInfo/' + that.id, {}).then(res => {
@@ -147,14 +176,31 @@ export default {
             that.viewCount = list.viewCount
       })
     }
+    axios.get(that.GLOBAL.API_ROOT + '/api/eduChapter/getChapterVideo/' + that.id, {}).then(res => {
+      that.chapterList = res.data.data.allVideos
+      console.log(that.chapterList)
+      if (that.chapterList === null) {
+        console.log('此课程无章节')
+      }
+    })
   },
   methods: {
+    changeVideo: function (event) {
+      var that = this
+      let video = event.target.files[0]
+      let formData = new FormData()
+      formData.append('eduVideo', video)
+      console.log(video)
+      axios.post(that.GLOBAL.API_ROOT + '/api/eduVideo/addVideo')
+    },
+
     uploadImage: function (event) {
       let file = event.target.files[0]
       let formData = new FormData()
       formData.append('file', file)
       console.log(file)
     },
+
     save: function () {
       var that = this
       axios.put(that.GLOBAL.API_ROOT + '/api/eduCourse/updateCourseInfo', ({
@@ -183,5 +229,7 @@ export default {
 </script>
 
 <style scoped>
-
+.tab-pane {
+  width: 1000px;
+}
 </style>

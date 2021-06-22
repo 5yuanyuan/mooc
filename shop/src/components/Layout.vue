@@ -66,7 +66,7 @@
                 <span class="lyear-toggler-bar"></span>
                 <span class="lyear-toggler-bar"></span>
               </div>
-              <span class="navbar-page-title"> {{title}} </span>
+              <span class="navbar-page-title"> {{ title }} </span>
             </div>
             <ul class="topbar-right">
               <li class="dropdown dropdown-profile">
@@ -79,7 +79,7 @@
                   <li><a href="lyear_pages_edit_pwd.html"><i class="mdi mdi-lock-outline"></i> 修改密码</a></li>
                   <li><a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
                   <li class="divider"></li>
-                  <li><a href="lyear_pages_login.html"><i class="mdi mdi-logout-variant"></i> 退出登录</a></li>
+                  <li><a @click="goto('/login')"><i class="mdi mdi-logout-variant"></i> 退出登录</a></li>
                 </ul>
               </li>
             </ul>
@@ -101,19 +101,23 @@
 
 export default {
   name: 'Layout',
-  provide(){
-    return{
-      changeTitle:this.changeTitle
+  provide() {
+    return {
+      changeTitle: this.changeTitle
     }
   },
-  data(){
-    return{
-      title:''
+  data() {
+    return {
+      title: ''
     }
   },
-  methods:{
-    changeTitle(title){
+  methods: {
+    changeTitle (title) {
       this.title = title
+    },
+
+    goto (url) {
+      this.$router.push(url)
     }
   }
 }

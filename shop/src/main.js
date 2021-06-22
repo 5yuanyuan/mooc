@@ -24,8 +24,8 @@ Vue.use(VideoPlayer)
 
 const routes = [
     {
-      path: '/login',
-      component: Login
+        path: '/login',
+        component: Login
     },
     {
         path: '/',
@@ -64,29 +64,29 @@ const routes = [
                 components: {
                     content: Course
                 }
-            },{
-                path:'teacher_list',
-                name:'teacher_list',
-                components:{
-                    content:TeacherList
+            }, {
+                path: 'teacher_list',
+                name: 'teacher_list',
+                components: {
+                    content: TeacherList
                 }
-            },{
-                path:'add_teacher',
-                name:'add_teacher',
-                components:{
-                    content:AddTeacher
+            }, {
+                path: 'add_teacher',
+                name: 'add_teacher',
+                components: {
+                    content: AddTeacher
                 }
-            },{
-                path:'subject_list',
-                name:'subject_list',
-                components:{
-                    content:SubjectList
+            }, {
+                path: 'subject_list',
+                name: 'subject_list',
+                components: {
+                    content: SubjectList
                 }
-            },{
-                path:'add_subject',
-                name:'add_subject',
-                components:{
-                    content:AddSubject
+            }, {
+                path: 'add_subject',
+                name: 'add_subject',
+                components: {
+                    content: AddSubject
                 }
             }
         ]
