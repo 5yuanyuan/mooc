@@ -1,0 +1,20 @@
+<view>
+  <video
+      id="videoPlayer"
+      autoplay
+      bindplay="videoPlayHandle"
+      class="vod-video"
+      bindtap="tapVideo"
+      bindpause="playPaused"
+      bindended="playPaused"
+      bindfullscreenchange="fullScreen"
+      poster="{{currentPoster}}"
+      src="{{currentResource}}"
+      bindwaiting="videoWaiting">
+        <cover-view class="video-control" hidden="{{controlHidden}}" >
+          <cover-view class="video-title">{{currentVideoTitle}}</cover-view>
+          <cover-view class="multi" capture-catch:tap="switchResource">{{currentDefinition}}</cover-view>
+          <cover-view class="multi rate" capture-catch:tap="showSwitchRate">x {{currentRate}}</cover-view>
+        </cover-view>
+  </video>
+</view>

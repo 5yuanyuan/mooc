@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "FooBar": "/component/FooBar/FooBar",
-    "Line": "/component/Line/Line"
+    "Line": "/component/Line/Line",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
   }
 }

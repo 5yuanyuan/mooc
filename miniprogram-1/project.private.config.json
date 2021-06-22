@@ -53,6 +53,12 @@
           "pathName": "pages/myCourse/myCourse",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "视频播放",
+          "pathName": "pages/video/video",
+          "query": "",
+          "scene": null
         }
       ]
     }

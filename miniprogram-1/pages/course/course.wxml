@@ -2,16 +2,25 @@
   <view class="video">
     <video class="videoItem"
       src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+      autoplay
+      bindplay="videoPlayHandle"
+      class="vod-video"
+      bindtap="tapVideo"
+      bindpause="playPaused"
+      bindended="playPaused"
       binderror="videoErrorCallback" show-center-play-btn='{{false}}' show-play-btn="{{true}}" controls></video>
   </view>
   <Line></Line>
   <view class="courseDetail">
-  <view class="top">
-    <view class="title">{{courseDetail.title}}</view>
-    <button bindtap="buy" type="primary" wx:if="{{canBuy}}">购买</button>
-    <button wx:if="{{canNotBuy}}"
-    type="warn" plain="true">已购买</button>
-  </view>
+    <view class="top">
+      <view class="title">{{courseDetail.title}}</view>
+      <button wx:if="{{canBuy == 1}}" bindtap="buy" type="primary">购买</button>
+      <button wx:else type="warn" plain="true" disabled="true">已购买</button>
+    </view>
+    <mp-dialog title="确认订单" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+      <view>订单号：{{orderId}}</view>
+      <view>付款金额：￥{{courseDetail.price}}</view>
+    </mp-dialog>
     <view class="msg">
       <view class="price" wx:if="{{courseDetail.price != 0}}">￥{{courseDetail.price}}</view>
       <view class="price" wx:else>免费</view>
