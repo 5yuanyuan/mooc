@@ -12,7 +12,7 @@
                                     <label for="name">讲师名称*</label>
                                     <input class="form-control" type="text" name="name" id="name" v-model="teacher.name" placeholder="请输入姓名" >
                                 </div>
-                                <div class="form-group">
+                                <div v-if="false" class="form-group">
                                     <label for="password">密码*</label>
                                     <input class="form-control" type="text" name="password" id="password" v-model="teacher.password" placeholder="请输入密码" />
                                 </div>
@@ -44,17 +44,17 @@
                                     <label >教师头衔*</label>
                                     <div class="example-box">
                                         <label class="lyear-radio radio-inline radio-primary">
-                                            <input type="radio"  @click="changeLevel(0)" name="level"><span>高级讲师</span>
+                                            <input type="radio" value="0" v-model="teacher.level" name="level"><span>高级讲师</span>
                                         </label>
                                         <label class="lyear-radio radio-inline radio-primary">
-                                            <input type="radio"  @click="changeLevel(1)" name="level"><span>首席讲师</span>
+                                            <input type="radio" value="1" v-model="teacher.level" name="level"><span>首席讲师</span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="avatar">头像</label>
                                     <div class="input-group">
-<!--                                        <img :src="`${teacher.avatar}?x-oss-process=image/resize,h_100,m_lfit`">-->
+                                        <img :src="`${teacher.avatar}?x-oss-process=image/resize,h_100,m_lfit`">
                                         <input type="file" @change="uploadImage" class="form-control" name="avatar" id="avatar"/>
 <!--                                        <input type="text" class="form-control" name="avatar" id="avatar"/>-->
 <!--                                        <div class="input-group-btn"><button class="btn btn-default" type="button">上传图片</button></div>-->
@@ -90,7 +90,7 @@
                     // not null
                     name:"",
                     // not null
-                    password:"",
+                    password:"123",
                     // not null
                     tel:"",
                     // not null
@@ -102,6 +102,13 @@
                     id:"",
                     sort:""//讲师级别
                 },
+            }
+        },
+        mounted() {
+            console.log("id=",this.$router.history.current.query.id)
+            this.teacher.id = this.$router.history.current.query.id;
+            if(this.$router.history.current.query.id){
+                this.getTeacherInfo(this.$router.history.current.query.id)
             }
         },
         methods:{
@@ -145,8 +152,8 @@
                 console.log(config)
                 axios.post(that.GLOBAL.API_ROOT + '/api/oss/uploadAvatar',formData,config)
                 .then(response=>{
-                    console.log(response.data);
-                    that.teacher.avatar = response.data.url;
+                    console.log(response.data.data.url);
+                    that.teacher.avatar = response.data.data.url;
                     console.log(that.teacher)
                 })
             },
@@ -199,8 +206,17 @@
             },
             // 根据id查询讲师
             getTeacherInfo(id) {
-                axios.get(this.GLOBAL.API_ROOT+ "/api/eduTeacher/getTeacherById/",{
-                    id:id
+                var that =this
+                axios.get(this.GLOBAL.API_ROOT+ "/api/eduTeacher/getTeacherById/"+id).then(res=>{
+                    console.log(res.data.data)
+                    that.teacher.avatar=res.data.data.avatar;
+                    that.teacher.career=res.data.data.career;
+                    that.teacher.level=res.data.data.level;
+                    that.teacher.intro=res.data.data.intro;
+                    that.teacher.password = res.data.data.password;
+                    that.teacher.name = res.data.data.name;
+                    that.teacher.tel = res.data.data.tel;
+                    that.teacher.sort = res.data.data.sort;
                 })
             },
         }

@@ -10,7 +10,7 @@
                         </a>
                         <div class="btn-group ">
 <!--                            <a class="btn btn-xs btn-primary m-r-5"><i class="mdi mdi-plus"></i> 新增</a>-->
-                            <a class="btn btn-xs btn-primary m-r-5"><i class="mdi mdi-pencil"></i>编辑</a>
+                            <a class="btn btn-xs btn-primary m-r-5" @click="GotoAdd(item.id)"><i class="mdi mdi-pencil"></i>编辑</a>
                             <a class="btn btn-xs btn-primary m-r-5"><i class="mdi mdi-window-close"></i>删除</a>
                         </div>
                     </h4>
@@ -21,7 +21,7 @@
                             {{subject.name}}
                             <div class="btn-group ">
     <!--                            <a class="btn btn-xs btn-primary m-r-5"><i class="mdi mdi-plus"></i> 新增</a>-->
-                                <a class="btn btn-xxs btn-cyan m-r-5"><i class="mdi mdi-pencil"></i></a>
+                                <a class="btn btn-xxs btn-cyan m-r-5" @click="GotoAdd(subject.id)"><i class="mdi mdi-pencil"></i></a>
                                 <a class="btn btn-xxs btn-cyan m-r-5"><i class="mdi mdi-window-close"></i></a>
                             </div>
                         </span>
@@ -53,11 +53,18 @@
                 let config = {
                     headers:{'token':localStorage.getItem("token")}
                 };
-                var that = this
+                var that = this;
                 axios.get(that.GLOBAL.API_ROOT + '/api/eduSubject/getSubject/list',config).then(response=>{
                     console.log(response.data);
                     that.List=response.data.data
                 })
+            },
+            GotoAdd:function(id){
+                if(id === undefined){
+                    this.$router.push({path:"/add_subject"})
+                }else{
+                    this.$router.push({path:"/add_subject",query:{id:id}})
+                }
             }
         },
         mounted() {

@@ -33,7 +33,7 @@
                 <a href="javascript:void(0)" data-toggle="dropdown"><i class="mdi mdi-file-outline"></i> 课程管理</a>
                 <ul class="nav nav-subnav">
                   <li>
-                    <router-link to="/course">课程管理</router-link>
+                    <router-link to="/excellent_courses">课程管理</router-link>
                   </li>
                   <li>
                     <router-link to="/subject_list">课程归类管理</router-link>
@@ -68,7 +68,7 @@
                 <span class="lyear-toggler-bar"></span>
                 <span class="lyear-toggler-bar"></span>
               </div>
-              <span class="navbar-page-title"> 示例页面 - 文档列表 </span>
+              <span class="navbar-page-title"> {{title}} </span>
             </div>
             <ul class="topbar-right">
               <li class="dropdown dropdown-profile">
@@ -102,6 +102,21 @@
 <script>
 
 export default {
-  name: 'Layout'
+  name: 'Layout',
+  provide(){
+    return{
+      changeTitle:this.changeTitle
+    }
+  },
+  data(){
+    return{
+      title:''
+    }
+  },
+  methods:{
+    changeTitle(title){
+      this.title = title
+    }
+  }
 }
 </script>

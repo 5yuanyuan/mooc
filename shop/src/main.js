@@ -14,6 +14,7 @@ import VideoPlayer from 'vue-video-player';
 import TeacherList from "./components/TeacherList";
 import AddTeacher from "./components/AddTeacher";
 import SubjectList from "./components/SubjectList";
+import AddSubject from "./components/AddSubject";
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -81,7 +82,13 @@ const routes = [
                 components:{
                     content:SubjectList
                 }
-            },
+            },{
+                path:'add_subject',
+                name:'add_subject',
+                components:{
+                    content:AddSubject
+                }
+            }
         ]
     }
 ]

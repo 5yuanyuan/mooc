@@ -31,7 +31,7 @@
                     <th>id</th>
                     <th>轮播图片</th>
 <!--                    <th>详情图片</th>-->
-                    <th>排序</th>
+<!--                    <th>排序</th>-->
                     <th>操作</th>
                   </tr>
                 </thead>
@@ -40,16 +40,16 @@
                     <td>{{ item.title }}</td>
                     <td><img :src="`${item.imageUrl}?x-oss-process=image/resize,h_100,m_lfit`"></td>
 <!--                    <td><img :src="`${item.detailImage}?x-oss-process=image/resize,h_100,m_lfit`"></td>-->
-                    <td>
-                      <select @change="changeOrder" v-model="item.orderNum">
-                        <option v-for="index of 50" :value="index" :key="index">{{ index }}</option>
-                      </select>
-                    </td>
+<!--                    <td>-->
+<!--                      <select @change="changeOrder" v-model="item.orderNum">-->
+<!--                        <option v-for="index of 50" :value="index" :key="index">{{ index }}</option>-->
+<!--                      </select>-->
+<!--                    </td>-->
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-xs btn-default" @click="goto(item.id)" title="编辑" data-toggle="tooltip"><i class="mdi mdi-pencil"></i></a>
-                        <a class="btn btn-xs btn-default" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i></a>
-                        <a class="btn btn-xs btn-default" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i></a>
+                        <a class="btn btn-xs btn-default" @click="goto(item.id)" title="编辑" data-toggle="tooltip"><i class="mdi mdi-pencil"></i>编辑</a>
+                        <a class="btn btn-xs btn-default" title="查看" data-toggle="tooltip"><i class="mdi mdi-eye"></i>查看</a>
+                        <a class="btn btn-xs btn-default" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i>删除</a>
                       </div>
                     </td>
                   </tr>
