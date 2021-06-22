@@ -7,7 +7,6 @@ import Login from "@/components/Login";
 import Report from "@/components/Report";
 import * as echarts from 'echarts'
 import Banner from "@/components/Banner";
-import ChangeBanner from "@/components/ChangeBanner";
 import ExcellentCourses from "@/components/ExcellentCourses";
 import Course from "@/components/Course";
 import VideoPlayer from 'vue-video-player';
@@ -37,13 +36,6 @@ const routes = [
                 path: 'banner_list',
                 components: {
                     content: Banner
-                }
-            },
-            {
-                path: 'change_banner',
-                name: 'change_banner',
-                components: {
-                    content: ChangeBanner
                 }
             },
             {

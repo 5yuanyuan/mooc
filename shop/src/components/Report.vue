@@ -6,8 +6,8 @@
         <div class="card bg-primary">
           <div class="card-body clearfix">
             <div class="pull-right">
-              <p class="h6 text-white m-t-0">今日收入</p>
-              <p class="h3 text-white m-b-0 fa-1-5x">102,125.00</p>
+              <p class="h6 text-white m-t-0">课程收入</p>
+              <p class="h3 text-white m-b-0 fa-1-5x">102,125</p>
             </div>
             <div class="pull-left"><span class="img-avatar img-avatar-48 bg-translucent"><i
                 class="mdi mdi-currency-cny fa-1-5x"></i></span></div>
@@ -19,7 +19,7 @@
         <div class="card bg-danger">
           <div class="card-body clearfix">
             <div class="pull-right">
-              <p class="h6 text-white m-t-0">用户总数</p>
+              <p class="h6 text-white m-t-0">新增注册人数</p>
               <p class="h3 text-white m-b-0 fa-1-5x">920,000</p>
             </div>
             <div class="pull-left"><span class="img-avatar img-avatar-48 bg-translucent"><i
@@ -32,8 +32,8 @@
         <div class="card bg-success">
           <div class="card-body clearfix">
             <div class="pull-right">
-              <p class="h6 text-white m-t-0">下载总量</p>
-              <p class="h3 text-white m-b-0 fa-1-5x">34,005,000</p>
+              <p class="h6 text-white m-t-0">课程总量</p>
+              <p class="h3 text-white m-b-0 fa-1-5x">34,005</p>
             </div>
             <div class="pull-left"><span class="img-avatar img-avatar-48 bg-translucent"><i
                 class="mdi mdi-arrow-down-bold fa-1-5x"></i></span></div>
@@ -45,8 +45,8 @@
         <div class="card bg-purple">
           <div class="card-body clearfix">
             <div class="pull-right">
-              <p class="h6 text-white m-t-0">新增留言</p>
-              <p class="h3 text-white m-b-0 fa-1-5x">153 条</p>
+              <p class="h6 text-white m-t-0">课程浏览量</p>
+              <p class="h3 text-white m-b-0 fa-1-5x">253,500,000</p>
             </div>
             <div class="pull-left"><span class="img-avatar img-avatar-48 bg-translucent"><i
                 class="mdi mdi-comment-outline fa-1-5x"></i></span></div>
@@ -75,34 +75,11 @@
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="card">
-          <div class="card-header">
-            <h4>收入报表</h4>
-          </div>
-          <div class="card-body" id="pieIncomeReport" style="width: 700px; height: 600px">
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="card">
-          <div class="card-header">
-            <h4>小伙伴</h4>
-          </div>
-          <div class="card-body" id="lineFriends" style="width: 700px; height: 600px">
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import * as echarts from 'echarts'
 
 export default {
   name: "Report",
@@ -114,8 +91,8 @@ export default {
   mounted() {
     this.readReportDate()
     this.readSaleIncome()
-    this.lineFriends()
   },
+
   methods: {
     showSaleIncomeReport: function (saleMoneyList, saleMonthList, level1List, level2List) {
       let saleIncomeReport = this.$echarts.init(document.getElementById('saleIncomeReport'))
@@ -330,112 +307,7 @@ export default {
               })
     },
 
-    pieReport: function (saleMoneyList, saleMonthList) {
-      let pieIncomeReport = this.$echarts.init(document.getElementById('pieIncomeReport'))
-      let res = []
-      for (var i = 0, j = 0; i < saleMonthList.length; i++, j++) {
-        res.push({value: saleMoneyList[i], name: saleMonthList[j]})
-      }
-      let option = {
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
-          top: '5%',
-          left: 'center'
-        },
-        series: [
-          {
-            name: '访问来源',
-            type: 'pie',
-            radius: ['40%', '70%'],
-            avoidLabelOverlap: false,
-            itemStyle: {
-              borderRadius: 10,
-              borderColor: '#fff',
-              borderWidth: 2
-            },
-            label: {
-              show: false,
-              position: 'center'
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: '40',
-                fontWeight: 'bold'
-              }
-            },
-            labelLine: {
-              show: false
-            },
-            data: res
-          }
-        ]
-      }
-      pieIncomeReport.setOption(option)
-    },
-
-    lineFriends: function () {
-      var chartDom = document.getElementById('lineFriends')
-      var myChart = echarts.init(chartDom)
-      var option
-      var that = this
-
-      myChart.showLoading()
-      axios.get(that.GLOBAL.API_ROOT + '/get_friends?seqNumber=10000', function (data) {
-        myChart.hideLoading()
-
-        data.children.forEach(function (datum, index) {
-          index % 2 === 0 && (datum.collapsed = true)
-        })
-
-        myChart.setOption(option = {
-          tooltip: {
-            trigger: 'item',
-            triggerOn: 'mousemove'
-          },
-          series: [
-            {
-              type: 'tree',
-
-              data: [data],
-
-              top: '1%',
-              left: '7%',
-              bottom: '1%',
-              right: '20%',
-
-              symbolSize: 7,
-
-              label: {
-                position: 'left',
-                verticalAlign: 'middle',
-                align: 'right',
-                fontSize: 9
-              },
-
-              leaves: {
-                label: {
-                  position: 'right',
-                  verticalAlign: 'middle',
-                  align: 'left'
-                }
-              },
-
-              emphasis: {
-                focus: 'descendant'
-              },
-
-              expandAndCollapse: true,
-              animationDuration: 550,
-              animationDurationUpdate: 750
-            }
-          ]
-        })
-      })
-      option && myChart.setOption(option)
-    }
+    
   }
 }
 </script>

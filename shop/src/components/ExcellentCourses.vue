@@ -116,6 +116,7 @@ export default {
       this.$router.push("/course")
     },
 
+
     delClass: function (id) {
       var that = this
       if (confirm('确定要删除吗？') === true) {
