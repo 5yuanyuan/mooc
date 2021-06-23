@@ -7,7 +7,7 @@
           <div class="card-body clearfix">
             <div class="pull-right">
               <p class="h6 text-white m-t-0">课程收入</p>
-              <p class="h3 text-white m-b-0 fa-1-5x">102,125</p>
+              <p class="h3 text-white m-b-0 fa-1-5x">102</p>
             </div>
             <div class="pull-left"><span class="img-avatar img-avatar-48 bg-translucent"><i
                 class="mdi mdi-currency-cny fa-1-5x"></i></span></div>
@@ -20,7 +20,7 @@
           <div class="card-body clearfix">
             <div class="pull-right">
               <p class="h6 text-white m-t-0">新增注册人数</p>
-              <p class="h3 text-white m-b-0 fa-1-5x">920,000</p>
+              <p class="h3 text-white m-b-0 fa-1-5x">92</p>
             </div>
             <div class="pull-left"><span class="img-avatar img-avatar-48 bg-translucent"><i
                 class="mdi mdi-account fa-1-5x"></i></span></div>
@@ -33,7 +33,7 @@
           <div class="card-body clearfix">
             <div class="pull-right">
               <p class="h6 text-white m-t-0">课程总量</p>
-              <p class="h3 text-white m-b-0 fa-1-5x">34,005</p>
+              <p class="h3 text-white m-b-0 fa-1-5x">34</p>
             </div>
             <div class="pull-left"><span class="img-avatar img-avatar-48 bg-translucent"><i
                 class="mdi mdi-arrow-down-bold fa-1-5x"></i></span></div>
@@ -46,7 +46,7 @@
           <div class="card-body clearfix">
             <div class="pull-right">
               <p class="h6 text-white m-t-0">课程浏览量</p>
-              <p class="h3 text-white m-b-0 fa-1-5x">253,500,000</p>
+              <p class="h3 text-white m-b-0 fa-1-5x">253</p>
             </div>
             <div class="pull-left"><span class="img-avatar img-avatar-48 bg-translucent"><i
                 class="mdi mdi-comment-outline fa-1-5x"></i></span></div>
@@ -55,22 +55,25 @@
       </div>
     </div>
 
+
+
     <div class="row">
       <div class="col-lg-6">
         <div class="card">
           <div class="card-header">
             <h4>登录人数</h4>
           </div>
-          <div class="card-body" id="login_num" style="width: 700px; height: 600px">
+          <div class="card-body" id="login_num" style="width: 500px; height: 400px">
           </div>
         </div>
       </div>
+
       <div class="col-lg-6">
         <div class="card">
           <div class="card-header">
             <h4>注册人数</h4>
           </div>
-          <div class="card-body" id="register_num" style="width: 700px; height: 600px">
+          <div class="card-body" id="register_num" style="width: 500px; height: 400px">
           </div>
         </div>
       </div>
@@ -86,250 +89,43 @@ export default {
   data() {
     return {
       loginList1: [],
-      loginList2: []
+      loginList2: [],
+      registerList1:[],
+      registerList2:[],
     }
   },
   mounted() {
     this.readLoginNum()
     this.readRegisterNum()
+    // this.readDailyData()
   },
   methods: {
-    showSaleIncomeReport: function (saleMoneyList, saleMonthList, level1List, level2List) {
-      let saleIncomeReport = this.$echarts.init(document.getElementById('saleIncomeReport'))
-      var posList = [
-        'left', 'right', 'top', 'bottom',
-        'inside',
-        'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
-        'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
-      ]
-
-      var app = {}
-
-      app.configParameters = {
-        rotate: {
-          min: -90,
-          max: 90
-        },
-        align: {
-          options: {
-            left: 'left',
-            center: 'center',
-            right: 'right'
-          }
-        },
-        verticalAlign: {
-          options: {
-            top: 'top',
-            middle: 'middle',
-            bottom: 'bottom'
-          }
-        },
-        position: {
-          options: posList.reduce(function (map, pos) {
-            map[pos] = pos;
-            return map;
-          }, {})
-        },
-        distance: {
-          min: 0,
-          max: 100
-        }
-      };
-
-      app.config = {
-        rotate: 90,
-        align: 'left',
-        verticalAlign: 'middle',
-        position: 'insideBottom',
-        distance: 15,
-        onChange: function () {
-          var labelOption = {
-            normal: {
-              rotate: app.config.rotate,
-              align: app.config.align,
-              verticalAlign: app.config.verticalAlign,
-              position: app.config.position,
-              distance: app.config.distance
-            }
-          }
-          saleIncomeReport.setOption({
-            series: [{
-              label: labelOption
-            }, {
-              label: labelOption
-            }, {
-              label: labelOption
-            }, {
-              label: labelOption
-            }]
-          });
-        }
-      };
-
-
-      var labelOption = {
-        show: true,
-        position: app.config.position,
-        distance: app.config.distance,
-        align: app.config.align,
-        verticalAlign: app.config.verticalAlign,
-        rotate: app.config.rotate,
-        formatter: '{c}  {name|{a}}',
-        fontSize: 16,
-        rich: {
-          name: {}
-        }
-      };
-
-      let option = {
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
-        },
-        legend: {
-          data: ['销售金额', '一级提成', '二级提成', 'Wetland']
-        },
-        toolbox: {
-          show: true,
-          orient: 'vertical',
-          left: 'right',
-          top: 'center',
-          feature: {
-            mark: {show: true},
-            dataView: {show: true, readOnly: false},
-            magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
-            restore: {show: true},
-            saveAsImage: {show: true}
-          }
-        },
-        xAxis: [
-          {
-            type: 'category',
-            axisTick: {show: false},
-            data: saleMonthList
-          }
-        ],
-        yAxis: [
-          {
-            type: 'value'
-          }
-        ],
-        series: [
-          {
-            name: '销售金额',
-            type: 'bar',
-            barGap: 0,
-            label: labelOption,
-            emphasis: {
-              focus: 'series'
-            },
-            data: saleMoneyList
-          },
-          {
-            name: '一级提成',
-            type: 'bar',
-            label: labelOption,
-            emphasis: {
-              focus: 'series'
-            },
-            data: level1List
-          },
-          {
-            name: '二级提成',
-            type: 'bar',
-            label: labelOption,
-            emphasis: {
-              focus: 'series'
-            },
-            data: level2List
-          }
-        ]
-      }
-      saleIncomeReport.setOption(option)
-    },
-
-    // 取销售和提成的数据
-    readSaleIncome: function () {
-      var that = this
-      axios.get('http://10.7.189.69:8080/api/get_month_sale_list')
-          .then(function (res) {
-                let saleMoneyList = []
-                let level1List = []
-                let level2List = []
-                let saleMonthList = []
-                res.data.forEach(item => {
-                  saleMoneyList.push(item.sale_money)
-                  saleMonthList.push(item.sale_month)
-                  level1List.push(item.level1money)
-                  level2List.push(item.level2money)
-                })
-                that.showSaleIncomeReport(saleMoneyList, saleMonthList, level1List, level2List)
-                that.pieReport(saleMoneyList, saleMonthList)
-              },
-              function (err) {
-                console.log(err)
-              })
-    },
-
-    showIncomeReport: function (keys, saleTotalList) {
-      let incomeReportChart = this.$echarts.init(document.getElementById('incomeReport'))
-      let option = {
-        xAxis: {
-          type: 'category',
-          data: keys
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: [{
-          data: saleTotalList,
-          type: 'bar'
-        }]
-      }
-      incomeReportChart.setOption(option)
-    },
-
-    readReportDate: function () {
-      var that = this
-      axios.get('http://10.7.189.69:8080/api/get_incomes/?seqNumber=100000')
-          .then(function (res) {
-                let keys = Object.keys(res.data.income_dict)
-                keys.forEach(function (key) {
-                  let saleTotal = res.data.income_dict[key].sale_total
-                  that.saleTotalList.push(saleTotal)
-                })
-                that.showIncomeReport(keys, that.saleTotalList)
-              },
-              function (err) {
-                console.log(err)
-              })
-    },
     readLoginNum() {
       var that = this
       axios.get(that.GLOBAL.API_ROOT + "/api/statisticsDaily/showData/login_num/2020-1-1/2020-12-30").then(
               function (response) {
-                console.log(response.data.data.date_calculatedList)
+                // console.log(response.data.data.date_calculatedList)
                 that.loginList1 = response.data.data.date_calculatedList;
+                that.loginList2 = response.data.data.numDataList
+                that.showLoginNum(that.loginList1,that.loginList2)
               },
               function (err) {
                 console.log(err);
               }
       )
     },
-    showLoginNum(){
+    showLoginNum(l1,l2){
       let LoginChart = this.$echarts.init(document.getElementById('login_num'))
       var option = {
         xAxis: {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          data: l1
         },
         yAxis: {
           type: 'value'
         },
         series: [{
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          data: l2,
           type: 'line',
           smooth: true
         }]
@@ -337,7 +133,65 @@ export default {
       LoginChart.setOption(option)
     },
     readRegisterNum() {
-
+      var that = this
+      axios.get(that.GLOBAL.API_ROOT + "/api/statisticsDaily/showData/resigter_num/2020-1-1/2020-12-30").then(
+              function (response) {
+                // console.log(response.data.data.date_calculatedList)
+                that.registerList1 = response.data.data.date_calculatedList;
+                that.registerList2 = response.data.data.numDataList
+                that.showRegisterNum(that.registerList1,that.registerList2)
+              },
+              function (err) {
+                console.log(err);
+              }
+      )
+    },
+    showRegisterNum(){
+      let RegisterChart = this.$echarts.init(document.getElementById('register_num'))
+      let option = {
+        xAxis: {},
+        yAxis: {},
+        series: [{
+          symbolSize: 20,
+          data: [
+            [10.0, 8.04],
+            [8.07, 6.95],
+            [13.0, 7.58],
+            [9.05, 8.81],
+            [11.0, 8.33],
+            [14.0, 7.66],
+            [13.4, 6.81],
+            [10.0, 6.33],
+            [14.0, 8.96],
+            [12.5, 6.82],
+            [9.15, 7.20],
+            [11.5, 7.20],
+            [3.03, 4.23],
+            [12.2, 7.83],
+            [2.02, 4.47],
+            [1.05, 3.33],
+            [4.05, 4.96],
+            [6.03, 7.24],
+            [12.0, 6.26],
+            [12.0, 8.84],
+            [7.08, 5.82],
+            [5.02, 5.68]
+          ],
+          type: 'scatter'
+        }]
+      };
+      RegisterChart.setOption(option)
+    },
+    readDailyData:function () {
+      // let that =this;
+      // axios.get(that.GLOBAL.API_ROOT+"/api/statisticsDaily/getData").then(
+      //         function (response) {
+      //           // console.log("id=",response.data.data.id)
+      //
+      //         },
+      //         function (err) {
+      //           console.log(err);
+      //         })
     }
 
   },

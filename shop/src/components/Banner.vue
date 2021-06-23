@@ -28,7 +28,7 @@
               <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th>id</th>
+<!--                    <th>id</th>-->
                     <th>轮播图片</th>
 <!--                    <th>详情图片</th>-->
 <!--                    <th>排序</th>-->
@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                   <tr v-for="item in bannerList" :key="item.id">
-                    <td>{{ item.title }}</td>
+<!--                    <td>{{ item.title }}</td>-->
                     <td><img :src="`${item.imageUrl}?x-oss-process=image/resize,h_100,m_lfit`"></td>
                     <td>
                       <div class="btn-group">
