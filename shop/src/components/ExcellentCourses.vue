@@ -64,13 +64,13 @@ import axios from 'axios'
 
 export default {
   name: "ExcellentCourses",
-  data() {
+  data () {
     return {
       payCourseList: []
     }
   },
 
-  mounted() {
+  mounted () {
     this.loadProducts()
   },
 
