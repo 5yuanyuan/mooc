@@ -19,6 +19,7 @@ Page({
     })
 
   },
+  
   selectResult: function (e) {
     console.log('select result', e)
     console.log(this.data.searchText);
